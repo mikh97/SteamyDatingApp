@@ -5,7 +5,36 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>5719F38C-8A2F-4DA2-A160-5CC45D81A383</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>5719F38C-8A2F-4DA2-A160-5CC45D81A383.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Steamy-aeieojkaesqdobfrzmbdtxrcuqdx</string>
+			<key>timeStartedRecording</key>
+			<real>645764511.63064396</real>
+			<key>timeStoppedRecording</key>
+			<real>645764512.46340001</real>
+			<key>title</key>
+			<string>Build target Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>5719F38C-8A2F-4DA2-A160-5CC45D81A383</string>
+		</dict>
+	</dict>
 	<key>preserveOldLogs</key>
 	<true/>
 </dict>
