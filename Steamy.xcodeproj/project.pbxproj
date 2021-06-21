@@ -14,6 +14,7 @@
 		6BE65D78267A332A000CAD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D77267A332A000CAD5E /* Assets.xcassets */; };
 		6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */; };
 		6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF62680201C00C1A094 /* SignUpView.swift */; };
+		6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF82680DC7B00C1A094 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BE65D7C267A332A000CAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE6CFF62680201C00C1A094 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		6BE6CFF82680DC7B00C1A094 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6BE65D7C267A332A000CAD5E /* Info.plist */,
 				6BE65D79267A332A000CAD5E /* Preview Content */,
 				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
+				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
 			);
 			path = Steamy;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */,
 				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
+				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,
 				6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
