@@ -36,13 +36,13 @@ struct SignUpView: View {
                 }
 
                 
-                Spacer(minLength: 50).frame(width: 20, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Spacer(minLength: 50).frame(width: 30, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
                 Text("Sign Up")
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 25, weight: .semibold, design: .rounded ))
                
-                Spacer(minLength: 50).frame(width: 85, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Spacer(minLength: 50).frame(width: 100, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
             }
                 

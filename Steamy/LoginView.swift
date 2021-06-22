@@ -30,19 +30,20 @@ struct LoginView: View {
                 }
 
                 
-                Spacer(minLength: 50).frame(width: 20, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Spacer(minLength: 50).frame(width: 50, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
                 Text("Login")
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 25, weight: .semibold, design: .rounded ))
                
-                Spacer(minLength: 50).frame(width: 85, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Spacer(minLength: 50).frame(width: 120, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
             }
+                Spacer(minLength: 30).frame(width: 10, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
                 VStack(alignment: .leading){
                     
-                    Spacer(minLength: 30).frame(width: 100, height:50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer(minLength: 30).frame(width: 100, height:60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
                     Text("Welcome Back!")
                         .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
@@ -52,7 +53,7 @@ struct LoginView: View {
                         .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                         .font(.system(size: 15, weight: .bold, design: .rounded ))
                     
-                    
+                    Spacer(minLength: 50).frame(width: 20, height:60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
                 
                 VStack{
@@ -81,6 +82,8 @@ struct LoginView: View {
                     
                 }
                     
+                    Spacer(minLength: 50).frame(width: 20, height:100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    
                     Button(action: {
                             print("Login pressed")
                     }) {
@@ -93,6 +96,13 @@ struct LoginView: View {
                             .border(Color.yellow, width:5)
                             .cornerRadius(40)
                             
+                    }
+                    
+                    Button(action: {
+                            print("Sign up pressed")
+                    }) {
+                        Text("Do not have an account? Sign up.")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                     }
                 }
             }
