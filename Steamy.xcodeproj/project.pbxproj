@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C4ED2192682353100DB60BB /* GoogleService-Info.plist */; };
 		6B8399C8267D83AE00F77B41 /* SteamyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8399C7267D83AE00F77B41 /* SteamyIcon.png */; };
 		6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */; };
 		6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D73267A3328000CAD5E /* SteamyApp.swift */; };
@@ -15,9 +16,12 @@
 		6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */; };
 		6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF62680201C00C1A094 /* SignUpView.swift */; };
 		6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF82680DC7B00C1A094 /* LoginView.swift */; };
+		877168E7D331409B09F0EC92 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46434B557561559E335A4DFB /* Pods_Steamy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C4ED2192682353100DB60BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46434B557561559E335A4DFB /* Pods_Steamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8399C7267D83AE00F77B41 /* SteamyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SteamyIcon.png; sourceTree = "<group>"; };
 		6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_OR_Log_UIView.swift; sourceTree = "<group>"; };
 		6BE65D70267A3328000CAD5E /* Steamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +32,8 @@
 		6BE65D7C267A332A000CAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE6CFF62680201C00C1A094 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6BE6CFF82680DC7B00C1A094 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A6C59078743A448472F33B06 /* Pods-Steamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.debug.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.debug.xcconfig"; sourceTree = "<group>"; };
+		AF48A9EE7C098A8896EAB946 /* Pods-Steamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.release.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877168E7D331409B09F0EC92 /* Pods_Steamy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C4908D5F4883FF05EBDBE7F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6C59078743A448472F33B06 /* Pods-Steamy.debug.xcconfig */,
+				AF48A9EE7C098A8896EAB946 /* Pods-Steamy.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6BE65D67267A3328000CAD5E = {
 			isa = PBXGroup;
 			children = (
 				6BE65D72267A3328000CAD5E /* Steamy */,
 				6BE65D71267A3328000CAD5E /* Products */,
+				4C4908D5F4883FF05EBDBE7F /* Pods */,
+				C3091A7A582A754A270DFA67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +85,7 @@
 				6BE65D77267A332A000CAD5E /* Assets.xcassets */,
 				6B8399C7267D83AE00F77B41 /* SteamyIcon.png */,
 				6BE65D7C267A332A000CAD5E /* Info.plist */,
+				0C4ED2192682353100DB60BB /* GoogleService-Info.plist */,
 				6BE65D79267A332A000CAD5E /* Preview Content */,
 				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
 				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
@@ -81,6 +101,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C3091A7A582A754A270DFA67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46434B557561559E335A4DFB /* Pods_Steamy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BE65D7F267A332A000CAD5E /* Build configuration list for PBXNativeTarget "Steamy" */;
 			buildPhases = (
+				D1CE8413BE729ABAE4252134 /* [CP] Check Pods Manifest.lock */,
 				6BE65D6C267A3328000CAD5E /* Sources */,
 				6BE65D6D267A3328000CAD5E /* Frameworks */,
 				6BE65D6E267A3328000CAD5E /* Resources */,
+				81713B1445EEA7D31F92019A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,12 +169,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */,
+				0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */,
 				6B8399C8267D83AE00F77B41 /* SteamyIcon.png in Resources */,
 				6BE65D78267A332A000CAD5E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81713B1445EEA7D31F92019A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Steamy/Pods-Steamy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Steamy/Pods-Steamy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Steamy/Pods-Steamy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1CE8413BE729ABAE4252134 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Steamy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BE65D6C267A3328000CAD5E /* Sources */ = {
@@ -280,6 +353,7 @@
 		};
 		6BE65D80267A332A000CAD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C59078743A448472F33B06 /* Pods-Steamy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NeevalKumar.Steamy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Steamy.SteamyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,6 +376,7 @@
 		};
 		6BE65D81267A332A000CAD5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF48A9EE7C098A8896EAB946 /* Pods-Steamy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,7 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NeevalKumar.Steamy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Steamy.SteamyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
