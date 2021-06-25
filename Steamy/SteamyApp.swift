@@ -12,12 +12,13 @@ import Firebase
 struct SteamyApp: App {
     
     init() {
-     FirebaseApp.configure()
+     //FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
         }
     }
 }

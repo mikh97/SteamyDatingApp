@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Sign_OR_Log_UIView: View {
     var body: some View {
+        NavigationView{
         ZStack {
            Color(red: 0.94, green: 0.30, blue: 0.22)
             .ignoresSafeArea()
@@ -23,9 +24,8 @@ struct Sign_OR_Log_UIView: View {
                 VStack{
                     Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-                    Button(action: {
-                            print("Login Up Pressed")
-                    }) {
+                   
+                    NavigationLink(destination: LoginView()){
                         Text("LOGIN")
                             .frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
@@ -34,14 +34,15 @@ struct Sign_OR_Log_UIView: View {
                             .foregroundColor(.white)
                             .border(Color.yellow, width:5)
                             .cornerRadius(40)
-                            
                     }
+            
+                            
+                    
                     
                     Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-                    Button(action: {
-                            print("Sign Up Pressed")
-                    }) {
+                    
+                    NavigationLink(destination: SignUpView()){
                         Text("SIGN UP")
                             .frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
@@ -50,16 +51,13 @@ struct Sign_OR_Log_UIView: View {
                             .foregroundColor(.black)
                             .border(Color.white, width:5)
                             .cornerRadius(40)
-                            
                     }
-                    
-                           
-                    
                 }
             }
         
         }
-    }
+        }.accentColor(.yellow)
+}
 }
 
 struct Sign_OR_Log_UIView_Previews: PreviewProvider {

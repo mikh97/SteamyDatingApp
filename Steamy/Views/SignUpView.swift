@@ -26,23 +26,11 @@ struct SignUpView: View {
                 
             HStack {
                 
-                Button(action: {
-                        print("Back Button Pressed")
-                }) {
-                    Label("Back", image: "Arrow_Back")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 13, weight: .semibold, design: .rounded ))
-                        
-                }
-
-                
-                Spacer(minLength: 50).frame(width: 30, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
                 Text("Sign Up")
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                    .font(.system(size: 25, weight: .semibold, design: .rounded ))
-               
-                Spacer(minLength: 50).frame(width: 100, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .font(.system(size: 50, weight: .semibold, design: .rounded ))
+            
                 
             }
                 
@@ -56,7 +44,7 @@ struct SignUpView: View {
                         .font(.system(size: 25, weight: .bold, design: .rounded ))
                         
                     Text("Create an account to use steamy")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.yellow)
                         .font(.system(size: 15, weight: .bold, design: .rounded ))
                 }
                 
