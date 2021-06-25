@@ -22,12 +22,9 @@ struct LoginView: View {
                     
                     
                     HStack{
-                        
-                        
                         Text("Login")
                             .foregroundColor(.white)
                             .font(.system(size: 50, weight: .semibold, design: .rounded ))
-                        
                         
                     }
                     
@@ -91,6 +88,8 @@ struct LoginView: View {
                                 .cornerRadius(40)
                             
                         }
+                        
+                        //Back to signup Page
                         
                         NavigationLink(destination: SignUpView()){
                             Text("Do not have an account? Sign up.")

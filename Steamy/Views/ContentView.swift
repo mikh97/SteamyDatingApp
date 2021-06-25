@@ -10,7 +10,8 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var willMoveToNextScreen = false
+    
+    //Code begins from here
     var body: some View {
         NavigationView{
         ZStack {
@@ -23,6 +24,8 @@ struct ContentView: View {
                 Text("Steamy")
                     .font(.system(size: 43, weight: .semibold, design: .rounded ))
                     .foregroundColor(Color.white)
+                
+                //Navigation Link will send us to the Login or Sign Up page
                 
                 NavigationLink(destination: Sign_OR_Log_UIView().navigationBarHidden(true).navigationTitle(""))
                 {

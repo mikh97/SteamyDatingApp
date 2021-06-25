@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    // these states need to be somehow be integrated with the database, please read more on that
+    
     @State var first_name: String = ""
     @State var last_name: String = ""
     @State var email: String = ""

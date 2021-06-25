@@ -24,6 +24,8 @@ struct Sign_OR_Log_UIView: View {
                 VStack{
                     Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
+                    
+                    //send to login Page
                    
                     NavigationLink(destination: LoginView()){
                         Text("LOGIN")
@@ -41,6 +43,8 @@ struct Sign_OR_Log_UIView: View {
                     
                     Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
+                    
+                    //Send to signup page
                     
                     NavigationLink(destination: SignUpView()){
                         Text("SIGN UP")
