@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>F000F67B-FB59-4748-A2CF-0D18BB0152F1</key>
+		<key>05E060F2-CAF7-4358-9B46-C3FC2273B731</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +15,35 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>F000F67B-FB59-4748-A2CF-0D18BB0152F1.xcactivitylog</string>
+			<string>05E060F2-CAF7-4358-9B46-C3FC2273B731.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>signature</key>
+			<string>Steamy-aeieojkaesqdobfrzmbdtxrcuqdx</string>
+			<key>timeStartedRecording</key>
+			<real>646345435.12620902</real>
+			<key>timeStoppedRecording</key>
+			<real>646345435.33351505</real>
+			<key>title</key>
+			<string>Build target Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>05E060F2-CAF7-4358-9B46-C3FC2273B731</string>
+		</dict>
+		<key>F4A92383-A72A-486C-B37A-B3FA51393419</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>F4A92383-A72A-486C-B37A-B3FA51393419.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -24,15 +52,15 @@
 				<string>S</string>
 			</dict>
 			<key>signature</key>
-			<string>Steamy-aeieojkaesqdobfrzmbdtxrcuqdx</string>
+			<string>MyPlayground-brpdggfbjbzysshhbmuivqkfhzlp</string>
 			<key>timeStartedRecording</key>
-			<real>646073753.25667</real>
+			<real>646340055.29880404</real>
 			<key>timeStoppedRecording</key>
-			<real>646073755.31082904</real>
+			<real>646340058.27488399</real>
 			<key>title</key>
-			<string>Build target Steamy</string>
+			<string>Build target MyPlayground_Sources</string>
 			<key>uniqueIdentifier</key>
-			<string>F000F67B-FB59-4748-A2CF-0D18BB0152F1</string>
+			<string>F4A92383-A72A-486C-B37A-B3FA51393419</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

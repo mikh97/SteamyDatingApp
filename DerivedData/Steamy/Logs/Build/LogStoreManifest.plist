@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>1000D8A5-E18F-4BA6-8CB6-DC6E8925008F</key>
+		<key>0D63E8E0-9032-4548-9C8F-4F65A491B150</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,109 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>1000D8A5-E18F-4BA6-8CB6-DC6E8925008F.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Steamy project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Steamy</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build for Previews Steamy</string>
-			<key>timeStartedRecording</key>
-			<real>645979626.10728502</real>
-			<key>timeStoppedRecording</key>
-			<real>645979627.11613798</real>
-			<key>title</key>
-			<string>Build for Previews Steamy</string>
-			<key>uniqueIdentifier</key>
-			<string>1000D8A5-E18F-4BA6-8CB6-DC6E8925008F</string>
-		</dict>
-		<key>32615328-2B9F-4852-91C8-8072BDE69860</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>32615328-2B9F-4852-91C8-8072BDE69860.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Steamy project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Steamy</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build for Previews Steamy</string>
-			<key>timeStartedRecording</key>
-			<real>646073167.32043397</real>
-			<key>timeStoppedRecording</key>
-			<real>646073168.85124803</real>
-			<key>title</key>
-			<string>Build for Previews Steamy</string>
-			<key>uniqueIdentifier</key>
-			<string>32615328-2B9F-4852-91C8-8072BDE69860</string>
-		</dict>
-		<key>3C465726-0A44-4BBD-B900-BF4CA231973A</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>3C465726-0A44-4BBD-B900-BF4CA231973A.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Steamy project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Steamy</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Build for Previews Steamy</string>
-			<key>timeStartedRecording</key>
-			<real>646073728.96777999</real>
-			<key>timeStoppedRecording</key>
-			<real>646073730.36156297</real>
-			<key>title</key>
-			<string>Build for Previews Steamy</string>
-			<key>uniqueIdentifier</key>
-			<string>3C465726-0A44-4BBD-B900-BF4CA231973A</string>
-		</dict>
-		<key>6445DC32-6207-4BCD-938D-265E0CBCB923</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>6445DC32-6207-4BCD-938D-265E0CBCB923.xcactivitylog</string>
+			<string>0D63E8E0-9032-4548-9C8F-4F65A491B150.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -134,15 +32,15 @@
 			<key>signature</key>
 			<string>Build for Previews Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646073359.60213399</real>
+			<real>646073954.51563704</real>
 			<key>timeStoppedRecording</key>
-			<real>646073360.68972504</real>
+			<real>646073955.03912699</real>
 			<key>title</key>
 			<string>Build for Previews Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>6445DC32-6207-4BCD-938D-265E0CBCB923</string>
+			<string>0D63E8E0-9032-4548-9C8F-4F65A491B150</string>
 		</dict>
-		<key>8A3AFA97-2EB5-4EE4-99E6-89C5AAF7DE2B</key>
+		<key>15AE8693-E91E-440C-9ECC-62A9324F12D9</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -151,13 +49,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>8A3AFA97-2EB5-4EE4-99E6-89C5AAF7DE2B.xcactivitylog</string>
+			<string>15AE8693-E91E-440C-9ECC-62A9324F12D9.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>S</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Steamy project</string>
@@ -168,15 +66,15 @@
 			<key>signature</key>
 			<string>Build for Previews Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646073753.18690896</real>
+			<real>646345435.04706502</real>
 			<key>timeStoppedRecording</key>
-			<real>646073755.31325197</real>
+			<real>646345435.36298501</real>
 			<key>title</key>
 			<string>Build for Previews Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>8A3AFA97-2EB5-4EE4-99E6-89C5AAF7DE2B</string>
+			<string>15AE8693-E91E-440C-9ECC-62A9324F12D9</string>
 		</dict>
-		<key>A6818A94-2056-40A0-89A8-47AB684CAC60</key>
+		<key>39104A6D-EF42-47B3-8D24-6427F39B8839</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -185,13 +83,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>A6818A94-2056-40A0-89A8-47AB684CAC60.xcactivitylog</string>
+			<string>39104A6D-EF42-47B3-8D24-6427F39B8839.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>S</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Steamy project</string>
@@ -202,15 +100,15 @@
 			<key>signature</key>
 			<string>Build for Previews Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646073662.111691</real>
+			<real>646339767.76322305</real>
 			<key>timeStoppedRecording</key>
-			<real>646073663.19396198</real>
+			<real>646339769.74899304</real>
 			<key>title</key>
 			<string>Build for Previews Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>A6818A94-2056-40A0-89A8-47AB684CAC60</string>
+			<string>39104A6D-EF42-47B3-8D24-6427F39B8839</string>
 		</dict>
-		<key>AA09D46A-B388-4E85-9A6F-AF69864DEE9F</key>
+		<key>509FEF51-0DFD-448B-A53F-032D5C0FD906</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -219,13 +117,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>AA09D46A-B388-4E85-9A6F-AF69864DEE9F.xcactivitylog</string>
+			<string>509FEF51-0DFD-448B-A53F-032D5C0FD906.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>S</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Steamy project</string>
@@ -236,13 +134,251 @@
 			<key>signature</key>
 			<string>Build for Previews Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646073385.08622098</real>
+			<real>646345180.59609199</real>
 			<key>timeStoppedRecording</key>
-			<real>646073386.47865903</real>
+			<real>646345181.80032098</real>
 			<key>title</key>
 			<string>Build for Previews Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>AA09D46A-B388-4E85-9A6F-AF69864DEE9F</string>
+			<string>509FEF51-0DFD-448B-A53F-032D5C0FD906</string>
+		</dict>
+		<key>753A6DEC-C6BC-4AC5-8885-9477809FAD1B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>753A6DEC-C6BC-4AC5-8885-9477809FAD1B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Steamy</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews Steamy</string>
+			<key>timeStartedRecording</key>
+			<real>646345213.50564897</real>
+			<key>timeStoppedRecording</key>
+			<real>646345214.93635499</real>
+			<key>title</key>
+			<string>Build for Previews Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>753A6DEC-C6BC-4AC5-8885-9477809FAD1B</string>
+		</dict>
+		<key>B1BA095B-2570-4983-9B4C-7524780B01FA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B1BA095B-2570-4983-9B4C-7524780B01FA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Steamy</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews Steamy</string>
+			<key>timeStartedRecording</key>
+			<real>646345129.277776</real>
+			<key>timeStoppedRecording</key>
+			<real>646345133.44956195</real>
+			<key>title</key>
+			<string>Build for Previews Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>B1BA095B-2570-4983-9B4C-7524780B01FA</string>
+		</dict>
+		<key>C0E4E42C-1A6C-41E2-991C-7D1709039F3E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C0E4E42C-1A6C-41E2-991C-7D1709039F3E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Steamy</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews Steamy</string>
+			<key>timeStartedRecording</key>
+			<real>646344648.15388405</real>
+			<key>timeStoppedRecording</key>
+			<real>646344652.20090604</real>
+			<key>title</key>
+			<string>Build for Previews Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>C0E4E42C-1A6C-41E2-991C-7D1709039F3E</string>
+		</dict>
+		<key>C3713A38-7197-43A0-B3B6-7B9F40085B25</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C3713A38-7197-43A0-B3B6-7B9F40085B25.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>MyPlayground (Playground)</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>0</integer>
+			<key>signature</key>
+			<string>Build MyPlayground (Playground) 2</string>
+			<key>timeStartedRecording</key>
+			<real>646340052.14653802</real>
+			<key>timeStoppedRecording</key>
+			<real>646340058.280617</real>
+			<key>title</key>
+			<string>Build MyPlayground (Playground) 2</string>
+			<key>uniqueIdentifier</key>
+			<string>C3713A38-7197-43A0-B3B6-7B9F40085B25</string>
+		</dict>
+		<key>D9895C05-03EC-47CD-8B9C-8D5551F546BF</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D9895C05-03EC-47CD-8B9C-8D5551F546BF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Steamy</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews Steamy</string>
+			<key>timeStartedRecording</key>
+			<real>646340158.70737302</real>
+			<key>timeStoppedRecording</key>
+			<real>646340159.549775</real>
+			<key>title</key>
+			<string>Build for Previews Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>D9895C05-03EC-47CD-8B9C-8D5551F546BF</string>
+		</dict>
+		<key>E5FE6FA3-B357-4D91-8AF5-36BA80A8FBA1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E5FE6FA3-B357-4D91-8AF5-36BA80A8FBA1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Steamy</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews Steamy</string>
+			<key>timeStartedRecording</key>
+			<real>646280107.51573205</real>
+			<key>timeStoppedRecording</key>
+			<real>646280111.27739096</real>
+			<key>title</key>
+			<string>Build for Previews Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>E5FE6FA3-B357-4D91-8AF5-36BA80A8FBA1</string>
+		</dict>
+		<key>F219A0D9-6EE7-497F-8BD0-676EA60EA932</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F219A0D9-6EE7-497F-8BD0-676EA60EA932.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Steamy project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Steamy</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews Steamy</string>
+			<key>timeStartedRecording</key>
+			<real>646345237.10039902</real>
+			<key>timeStoppedRecording</key>
+			<real>646345237.22887504</real>
+			<key>title</key>
+			<string>Build for Previews Steamy</string>
+			<key>uniqueIdentifier</key>
+			<string>F219A0D9-6EE7-497F-8BD0-676EA60EA932</string>
 		</dict>
 	</dict>
 </dict>

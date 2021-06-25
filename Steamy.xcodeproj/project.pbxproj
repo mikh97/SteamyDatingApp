@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C4ED2192682353100DB60BB /* GoogleService-Info.plist */; };
-		6B8399C8267D83AE00F77B41 /* SteamyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8399C7267D83AE00F77B41 /* SteamyIcon.png */; };
 		6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */; };
 		6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D73267A3328000CAD5E /* SteamyApp.swift */; };
 		6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D75267A3328000CAD5E /* ContentView.swift */; };
@@ -16,13 +15,14 @@
 		6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */; };
 		6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF62680201C00C1A094 /* SignUpView.swift */; };
 		6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF82680DC7B00C1A094 /* LoginView.swift */; };
+		6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFE093F26865E3B008261D4 /* ProfileView.swift */; };
+		6BFE096926866AE1008261D4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFE096826866AE1008261D4 /* Account.swift */; };
 		877168E7D331409B09F0EC92 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46434B557561559E335A4DFB /* Pods_Steamy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C4ED2192682353100DB60BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46434B557561559E335A4DFB /* Pods_Steamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B8399C7267D83AE00F77B41 /* SteamyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SteamyIcon.png; sourceTree = "<group>"; };
 		6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_OR_Log_UIView.swift; sourceTree = "<group>"; };
 		6BE65D70267A3328000CAD5E /* Steamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE65D73267A3328000CAD5E /* SteamyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyApp.swift; sourceTree = "<group>"; };
@@ -32,6 +32,8 @@
 		6BE65D7C267A332A000CAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE6CFF62680201C00C1A094 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6BE6CFF82680DC7B00C1A094 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6BFE093F26865E3B008261D4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		6BFE096826866AE1008261D4 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A6C59078743A448472F33B06 /* Pods-Steamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.debug.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF48A9EE7C098A8896EAB946 /* Pods-Steamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.release.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +56,6 @@
 				A6C59078743A448472F33B06 /* Pods-Steamy.debug.xcconfig */,
 				AF48A9EE7C098A8896EAB946 /* Pods-Steamy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,15 +81,13 @@
 			isa = PBXGroup;
 			children = (
 				6BE65D73267A3328000CAD5E /* SteamyApp.swift */,
-				6BE65D75267A3328000CAD5E /* ContentView.swift */,
-				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
+				6BFE0966268667F5008261D4 /* Views */,
+				6BFE09672686697A008261D4 /* Model */,
+				6BFE096A26866FE2008261D4 /* Resources */,
 				6BE65D77267A332A000CAD5E /* Assets.xcassets */,
-				6B8399C7267D83AE00F77B41 /* SteamyIcon.png */,
 				6BE65D7C267A332A000CAD5E /* Info.plist */,
 				0C4ED2192682353100DB60BB /* GoogleService-Info.plist */,
 				6BE65D79267A332A000CAD5E /* Preview Content */,
-				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
-				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
 			);
 			path = Steamy;
 			sourceTree = "<group>";
@@ -99,6 +98,33 @@
 				6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6BFE0966268667F5008261D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
+				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
+				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
+				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
+				6BE65D75267A3328000CAD5E /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6BFE09672686697A008261D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BFE096826866AE1008261D4 /* Account.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BFE096A26866FE2008261D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C3091A7A582A754A270DFA67 /* Frameworks */ = {
@@ -170,7 +196,6 @@
 			files = (
 				6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */,
 				0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */,
-				6B8399C8267D83AE00F77B41 /* SteamyIcon.png in Resources */,
 				6BE65D78267A332A000CAD5E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +253,9 @@
 				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
 				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,
+				6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */,
 				6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */,
+				6BFE096926866AE1008261D4 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

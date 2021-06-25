@@ -20,14 +20,12 @@ struct LoginView: View {
                 
             HStack {
                 
-                Button(action: {
-                        print("Back Button Pressed")
-                }) {
-                    Label("Back", image: "Arrow_Back")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 13, weight: .semibold, design: .rounded ))
-                        
-                }
+                NavigationView{
+                    NavigationLink(
+                        destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/,
+                        label: {
+                            /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
+                        })                }
 
                 
                 Spacer(minLength: 50).frame(width: 50, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
