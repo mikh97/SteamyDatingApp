@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C4ED2192682353100DB60BB /* GoogleService-Info.plist */; };
+		0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346E2688903A00BCDA64 /* UserApi.swift */; };
+		0C4F34712688903A00BCDA64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346F2688903A00BCDA64 /* Api.swift */; };
 		6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */; };
 		6BD9B77C26868B7C00D8726E /* App_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD9B77B26868B7B00D8726E /* App_logo.png */; };
 		6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D73267A3328000CAD5E /* SteamyApp.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		0C4ED2192682353100DB60BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0C4F346E2688903A00BCDA64 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		0C4F346F2688903A00BCDA64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		46434B557561559E335A4DFB /* Pods_Steamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_OR_Log_UIView.swift; sourceTree = "<group>"; };
 		6BD9B77B26868B7B00D8726E /* App_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_logo.png; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		6BFE0966268667F5008261D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C4F346F2688903A00BCDA64 /* Api.swift */,
+				0C4F346E2688903A00BCDA64 /* UserApi.swift */,
 				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
 				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
 				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
@@ -253,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4F34712688903A00BCDA64 /* Api.swift in Sources */,
 				6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */,
+				0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */,
 				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
 				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,

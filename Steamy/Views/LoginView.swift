@@ -6,8 +6,26 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import ProgressHUD
 
 struct LoginView: View {
+    
+    func signIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        guard !email.isEmpty, !password.isEmpty else {
+            ProgressHUD.showError("Email/Password missing.")
+            return
+        }
+        
+        ProgressHUD.show()
+        Api.User.signIn(email: email, password: password) {
+            ProgressHUD.dismiss()
+            onSuccess()
+        } onError: { errorMessage in
+            onError(errorMessage)
+        }
+    }
+    
     
     @State var email: String = ""
     @State var password: String = ""
@@ -77,6 +95,17 @@ struct LoginView: View {
                         
                         Button(action: {
                             print("Login pressed")
+//                            login()
+                            signIn {
+                                // switch view if success
+                            } onError: { errorMessage in
+                                ProgressHUD.showError(errorMessage)
+                            }
+
+                            
+//                            if Auth.auth().currentUser != nil {
+//                                print("signed in")                            }
+                            
                         }) {
                             Text("Login")
                                 .frame(width: 250, height: 0, alignment: .center)

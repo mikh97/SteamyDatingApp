@@ -7,6 +7,8 @@ target 'Steamy' do
 
   # Pods for Steamy
   pod 'Firebase/Analytics'
-    
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'ProgressHUD'
 
 end

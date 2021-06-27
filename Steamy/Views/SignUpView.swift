@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseDatabase
+import ProgressHUD
 
 struct SignUpView: View {
     
@@ -16,6 +19,28 @@ struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var confirm_password: String = ""
+    
+    func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        guard !first_name.isEmpty, !last_name.isEmpty,
+              !email.isEmpty, !password.isEmpty, !confirm_password.isEmpty else {
+            ProgressHUD.showError("Complete all the fields.")
+            return
+        }
+        
+        if password != confirm_password {
+            ProgressHUD.showError("Password not match.")
+            return
+        }
+        
+        ProgressHUD.show()
+        Api.User.signUp(email: email, password: password, firstName: first_name, lastName: last_name) {
+            ProgressHUD.dismiss()
+            onSuccess()
+        } onError: { errorMessage in
+            onError(errorMessage)
+        }
+    }
+    
     
     var body: some View {
         
@@ -99,6 +124,12 @@ struct SignUpView: View {
                     
                     Button(action: {
                             print("Create Pressed")
+                        signUp {
+                            // switch view if success
+                        } onError: { errorMessage in
+                            ProgressHUD.showError(errorMessage)
+                        }
+
                     }) {
                         Text("Create")
                             .frame(width: 250, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
