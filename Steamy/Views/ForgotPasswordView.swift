@@ -11,6 +11,7 @@ import FirebaseAuth
 
 struct ForgotPasswordView: View {
     
+    @State var email_sent = false
     @State var email = ""
     var body: some View {
         ZStack{
@@ -36,20 +37,27 @@ struct ForgotPasswordView: View {
                     .frame(width: 250, height: 75, alignment: .center)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                NavigationLink(
-                    destination: SignUpView(),
-                    label: {Text("Submit").frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                Button(action: {
+                    Auth.auth().sendPasswordReset(withEmail: email) { error in
+                        // ...
+                        email_sent = true
+                    }
+                }){
+                    Text("Submit").frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
                         .padding()
                         .background(Color.yellow)
                         .foregroundColor(.white)
                         .border(Color.yellow, width:5)
-                        .cornerRadius(40).onTapGesture {
-                            Auth.auth().sendPasswordReset(withEmail: email) { error in
-                                // ...
-                            }
-                        }}
-                )
+                        .cornerRadius(40)
+                }
+                
+                if (email_sent == true){
+                    Text("Email Sent if Account exists.")
+                        .font(.system(size: 20, weight: .semibold, design: .rounded ))
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.leading)                }
             }
             
         }

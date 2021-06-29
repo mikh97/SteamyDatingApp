@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @State var email = ""
+    @State var password = ""
     var body: some View {
         NavigationView{
             ZStack {

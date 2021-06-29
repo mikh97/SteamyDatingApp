@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>65ED221B-B6B0-40FB-A338-86DC1E4F7E7A</key>
+		<key>09E3C4CB-9496-4289-B704-4D87C3255B61</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>65ED221B-B6B0-40FB-A338-86DC1E4F7E7A.xcactivitylog</string>
+			<string>09E3C4CB-9496-4289-B704-4D87C3255B61.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Run Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646642330.55909395</real>
+			<real>646642454.84858501</real>
 			<key>timeStoppedRecording</key>
-			<real>646642452.43300998</real>
+			<real>646643532.26592898</real>
 			<key>title</key>
 			<string>Run Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>65ED221B-B6B0-40FB-A338-86DC1E4F7E7A</string>
+			<string>09E3C4CB-9496-4289-B704-4D87C3255B61</string>
 		</dict>
-		<key>7DEC699D-311D-46F0-B074-DBC6E7985699</key>
+		<key>75B23455-93FC-4652-9CF2-3782D4A44931</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>7DEC699D-311D-46F0-B074-DBC6E7985699.xcactivitylog</string>
+			<string>75B23455-93FC-4652-9CF2-3782D4A44931.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,15 +66,15 @@
 			<key>signature</key>
 			<string>Run Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646642317.63465297</real>
+			<real>646644312.69990098</real>
 			<key>timeStoppedRecording</key>
-			<real>646642318.01555395</real>
+			<real>646644377.14733195</real>
 			<key>title</key>
 			<string>Run Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>7DEC699D-311D-46F0-B074-DBC6E7985699</string>
+			<string>75B23455-93FC-4652-9CF2-3782D4A44931</string>
 		</dict>
-		<key>FA0E6F5F-E26B-43D2-8323-636723077676</key>
+		<key>BE0C1EFF-F01F-4ACA-BB0D-AA53958F89C0</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -83,7 +83,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>FA0E6F5F-E26B-43D2-8323-636723077676.xcactivitylog</string>
+			<string>BE0C1EFF-F01F-4ACA-BB0D-AA53958F89C0.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -100,13 +100,13 @@
 			<key>signature</key>
 			<string>Run Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646638850.11415303</real>
+			<real>646649842.75266802</real>
 			<key>timeStoppedRecording</key>
-			<real>646638850.198017</real>
+			<real>646650388.99119103</real>
 			<key>title</key>
 			<string>Run Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>FA0E6F5F-E26B-43D2-8323-636723077676</string>
+			<string>BE0C1EFF-F01F-4ACA-BB0D-AA53958F89C0</string>
 		</dict>
 	</dict>
 </dict>
