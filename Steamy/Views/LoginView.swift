@@ -38,7 +38,6 @@ struct LoginView: View {
                 
                 VStack{
                     
-                    
                     HStack{
                         Text("Login")
                             .foregroundColor(.white)
@@ -55,8 +54,8 @@ struct LoginView: View {
                         Text("Welcome Back!")
                             .foregroundColor(.white)
                             .font(.system(size: 30, weight: .bold, design: .rounded ))
-                            
-                            
+                        
+                        
                         Text("Sign in to continue")
                             .foregroundColor(.yellow)
                             .font(.system(size: 25, weight: .bold, design: .rounded ))
@@ -83,28 +82,43 @@ struct LoginView: View {
                             .frame(width: 250, height: 75, alignment: .center)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
-                        Button(action: {
-                            print("Forgot password pressed")
-                        }) {
-                            Text("Forgot password?")
+                        NavigationLink(destination: ForgotPasswordView()){
+                            Text("Forgot Password?")
                                 .foregroundColor(.white)
-                            
                         }
                         
                         Spacer(minLength: 50).frame(width: 20, height:100, alignment: .center)
                         
+                        
+                        NavigationLink(destination: ProfileView(), label: {Text("Login")
+                                        .frame(width: 250, height: 0, alignment: .center)
+                                        .font(.system(size: 20, weight: .semibold, design: .rounded))
+                                        .padding()
+                                        .background(Color.yellow)
+                                        .foregroundColor(.white)
+                                        .border(Color.yellow, width:5)
+                                        .cornerRadius(40)
+                            .onTapGesture {
+                                signIn {
+                                } onError: { errorMessage in
+                                    ProgressHUD.showError(errorMessage)
+                                }
+                            }
+                        })
+                        
+                        /*
                         Button(action: {
                             print("Login pressed")
-//                            login()
+                            //                            login()
                             signIn {
                                 // switch view if success
                             } onError: { errorMessage in
                                 ProgressHUD.showError(errorMessage)
                             }
-
                             
-//                            if Auth.auth().currentUser != nil {
-//                                print("signed in")                            }
+                            
+                            //                            if Auth.auth().currentUser != nil {
+                            //                                print("signed in")                            }
                             
                         }) {
                             Text("Login")
@@ -117,6 +131,7 @@ struct LoginView: View {
                                 .cornerRadius(40)
                             
                         }
+ */
                         
                         //Back to signup Page
                         
@@ -132,11 +147,11 @@ struct LoginView: View {
             }
         }
     }
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
+    
+    struct LoginView_Previews: PreviewProvider {
+        static var previews: some View {
+            LoginView()
+        }
     }
-}
 }
 
