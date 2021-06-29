@@ -12,7 +12,7 @@ struct ProfileView: View {
     @State var email = ""
     @State var password = ""
     var body: some View {
-        NavigationView{
+        
             ZStack {
                 VStack{
                     Text("Profile")
@@ -21,7 +21,7 @@ struct ProfileView: View {
             }
         }
     }
-}
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

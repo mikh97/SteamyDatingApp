@@ -31,7 +31,6 @@ struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
     var body: some View {
-        NavigationView{
             ZStack {
                 
                 Color(red: 0.94, green: 0.30, blue: 0.22)
@@ -145,7 +144,7 @@ struct LoginView: View {
                 }
             }
         }
-    }
+    
     
     struct LoginView_Previews: PreviewProvider {
         static var previews: some View {

@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>09E3C4CB-9496-4289-B704-4D87C3255B61</key>
+		<key>0D754B8C-30D1-4061-A70A-644C216800FE</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>09E3C4CB-9496-4289-B704-4D87C3255B61.xcactivitylog</string>
+			<string>0D754B8C-30D1-4061-A70A-644C216800FE.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,81 +32,13 @@
 			<key>signature</key>
 			<string>Run Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646642454.84858501</real>
+			<real>646650391.90064394</real>
 			<key>timeStoppedRecording</key>
-			<real>646643532.26592898</real>
+			<real>646650630.69604301</real>
 			<key>title</key>
 			<string>Run Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>09E3C4CB-9496-4289-B704-4D87C3255B61</string>
-		</dict>
-		<key>75B23455-93FC-4652-9CF2-3782D4A44931</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>75B23455-93FC-4652-9CF2-3782D4A44931.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Steamy project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Steamy</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run Steamy</string>
-			<key>timeStartedRecording</key>
-			<real>646644312.69990098</real>
-			<key>timeStoppedRecording</key>
-			<real>646644377.14733195</real>
-			<key>title</key>
-			<string>Run Steamy</string>
-			<key>uniqueIdentifier</key>
-			<string>75B23455-93FC-4652-9CF2-3782D4A44931</string>
-		</dict>
-		<key>BE0C1EFF-F01F-4ACA-BB0D-AA53958F89C0</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>BE0C1EFF-F01F-4ACA-BB0D-AA53958F89C0.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Steamy project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Steamy</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run Steamy</string>
-			<key>timeStartedRecording</key>
-			<real>646649842.75266802</real>
-			<key>timeStoppedRecording</key>
-			<real>646650388.99119103</real>
-			<key>title</key>
-			<string>Run Steamy</string>
-			<key>uniqueIdentifier</key>
-			<string>BE0C1EFF-F01F-4ACA-BB0D-AA53958F89C0</string>
+			<string>0D754B8C-30D1-4061-A70A-644C216800FE</string>
 		</dict>
 	</dict>
 </dict>
