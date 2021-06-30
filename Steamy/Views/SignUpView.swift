@@ -21,14 +21,39 @@ struct SignUpView: View {
     @State var confirm_password: String = ""
     
     func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
-        guard !first_name.isEmpty, !last_name.isEmpty,
-              !email.isEmpty, !password.isEmpty, !confirm_password.isEmpty else {
+        guard !first_name.isEmpty,
+              !last_name.isEmpty,
+              !email.isEmpty,
+              !password.isEmpty,
+              !confirm_password.isEmpty
+        else {
             ProgressHUD.showError("Complete all the fields.")
             return
         }
         
+        // Make sure user's first and last name does not contain integers (Mikhail)
+        let firstNameCharacters = CharacterSet.decimalDigits
+        let firstNameRange = first_name.rangeOfCharacter(from: firstNameCharacters)
+        if firstNameRange != nil {
+            ProgressHUD.showError("Name cannot contain integer.")
+            return
+        }
+        let lastNameCharacters = CharacterSet.decimalDigits
+        let lastNameRange = last_name.rangeOfCharacter(from: lastNameCharacters)
+        if lastNameRange != nil {
+            ProgressHUD.showError("Name cannot contain integer.")
+            return
+        }
+        
+        // Make sure user's password is not too long or too short (Mikhail)
         if password != confirm_password {
             ProgressHUD.showError("Password not match.")
+            return
+        } else if password.count < 6 {
+            ProgressHUD.showError("Password too short.")
+            return
+        } else if password.count >= 20 {
+            ProgressHUD.showError("Password too long.")
             return
         }
         
@@ -43,8 +68,7 @@ struct SignUpView: View {
     
     
     var body: some View {
-        
-        
+               
         ZStack {
             Color(red: 0.94, green: 0.30, blue: 0.22)
              .ignoresSafeArea()
@@ -177,7 +201,6 @@ struct SignUpView: View {
         }
     }
 }
-
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {

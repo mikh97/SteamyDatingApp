@@ -92,9 +92,6 @@
 				6BFE0966268667F5008261D4 /* Views */,
 				6BFE09672686697A008261D4 /* Model */,
 				6BFE096A26866FE2008261D4 /* Resources */,
-				6BE65D77267A332A000CAD5E /* Assets.xcassets */,
-				6BE65D7C267A332A000CAD5E /* Info.plist */,
-				6BD9B77B26868B7B00D8726E /* App_logo.png */,
 				0C4ED2192682353100DB60BB /* GoogleService-Info.plist */,
 				6BE65D79267A332A000CAD5E /* Preview Content */,
 			);
@@ -135,6 +132,9 @@
 		6BFE096A26866FE2008261D4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6BE65D77267A332A000CAD5E /* Assets.xcassets */,
+				6BE65D7C267A332A000CAD5E /* Info.plist */,
+				6BD9B77B26868B7B00D8726E /* App_logo.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 		6BE65D68267A3328000CAD5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					6BE65D6F267A3328000CAD5E = {
@@ -329,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -384,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -402,10 +402,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Steamy/Preview Content\"";
-				DEVELOPMENT_TEAM = HZ7FTJW6X6;
+				DEVELOPMENT_TEAM = 93Y3PSZG8S;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Steamy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Steamy/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,10 +425,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Steamy/Preview Content\"";
-				DEVELOPMENT_TEAM = HZ7FTJW6X6;
+				DEVELOPMENT_TEAM = 93Y3PSZG8S;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Steamy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Steamy/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
