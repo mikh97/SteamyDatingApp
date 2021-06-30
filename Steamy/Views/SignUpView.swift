@@ -22,7 +22,6 @@ struct SignUpView: View {
     
     
     func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
-        print(first_name)
         guard !first_name.isEmpty,
               !last_name.isEmpty,
               !email.isEmpty,
