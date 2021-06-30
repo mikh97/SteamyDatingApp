@@ -20,7 +20,9 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var confirm_password: String = ""
     
+    
     func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        print(first_name)
         guard !first_name.isEmpty,
               !last_name.isEmpty,
               !email.isEmpty,
