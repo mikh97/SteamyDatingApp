@@ -17,7 +17,7 @@ struct SteamyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchScreen()
             
         }
     }

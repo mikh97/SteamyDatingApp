@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>BAEDC27B-B96D-4618-B252-B6966E85B18E</key>
+		<key>1B6793F4-39A2-449C-A2E1-D83D91979A64</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>BAEDC27B-B96D-4618-B252-B6966E85B18E.xcactivitylog</string>
+			<string>1B6793F4-39A2-449C-A2E1-D83D91979A64.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,13 +32,13 @@
 			<key>signature</key>
 			<string>Build for Previews Steamy</string>
 			<key>timeStartedRecording</key>
-			<real>646650558.82857299</real>
+			<real>647168694.41202796</real>
 			<key>timeStoppedRecording</key>
-			<real>646650570.62207699</real>
+			<real>647168696.84506202</real>
 			<key>title</key>
 			<string>Build for Previews Steamy</string>
 			<key>uniqueIdentifier</key>
-			<string>BAEDC27B-B96D-4618-B252-B6966E85B18E</string>
+			<string>1B6793F4-39A2-449C-A2E1-D83D91979A64</string>
 		</dict>
 	</dict>
 </dict>

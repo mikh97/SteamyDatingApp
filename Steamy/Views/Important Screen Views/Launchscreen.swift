@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ContentView: View {
+struct LaunchScreen: View {
     
     //Code begins from here
     var body: some View {
@@ -44,7 +44,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LaunchScreen()
     }
     
     

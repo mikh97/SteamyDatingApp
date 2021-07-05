@@ -12,11 +12,16 @@
 		0C4F34712688903A00BCDA64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346F2688903A00BCDA64 /* Api.swift */; };
 		60297661268C5F6700C9B0FA /* SteamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60297660268C5F6700C9B0FA /* SteamyTests.swift */; };
 		602976AD268C83C500C9B0FA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602976AC268C83C500C9B0FA /* Validation.swift */; };
+		6B334D912692CBE400CDA852 /* InnerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* InnerProfileView.swift */; };
+		6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D922692CDAC00CDA852 /* MatchScreenView.swift */; };
+		6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessagingView.swift */; };
+		6B334D9D2692E60600CDA852 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D9C2692E60600CDA852 /* EditProfileView.swift */; };
+		6B334DA22692F72D00CDA852 /* AddProfileImagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334DA12692F72D00CDA852 /* AddProfileImagePopupView.swift */; };
 		6B586E7C268AED1000993048 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B586E7B268AED1000993048 /* ForgotPasswordView.swift */; };
 		6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */; };
 		6BD9B77C26868B7C00D8726E /* App_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD9B77B26868B7B00D8726E /* App_logo.png */; };
 		6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D73267A3328000CAD5E /* SteamyApp.swift */; };
-		6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D75267A3328000CAD5E /* ContentView.swift */; };
+		6BE65D76267A3328000CAD5E /* Launchscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D75267A3328000CAD5E /* Launchscreen.swift */; };
 		6BE65D78267A332A000CAD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D77267A332A000CAD5E /* Assets.xcassets */; };
 		6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */; };
 		6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF62680201C00C1A094 /* SignUpView.swift */; };
@@ -49,12 +54,17 @@
 		60297660268C5F6700C9B0FA /* SteamyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyTests.swift; sourceTree = "<group>"; };
 		60297662268C5F6700C9B0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602976AC268C83C500C9B0FA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		6B334D902692CBE400CDA852 /* InnerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerProfileView.swift; sourceTree = "<group>"; };
+		6B334D922692CDAC00CDA852 /* MatchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScreenView.swift; sourceTree = "<group>"; };
+		6B334D962692D67F00CDA852 /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
+		6B334D9C2692E60600CDA852 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		6B334DA12692F72D00CDA852 /* AddProfileImagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileImagePopupView.swift; sourceTree = "<group>"; };
 		6B586E7B268AED1000993048 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_OR_Log_UIView.swift; sourceTree = "<group>"; };
 		6BD9B77B26868B7B00D8726E /* App_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_logo.png; sourceTree = "<group>"; };
 		6BE65D70267A3328000CAD5E /* Steamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE65D73267A3328000CAD5E /* SteamyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyApp.swift; sourceTree = "<group>"; };
-		6BE65D75267A3328000CAD5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6BE65D75267A3328000CAD5E /* Launchscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchscreen.swift; sourceTree = "<group>"; };
 		6BE65D77267A332A000CAD5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BE65D7C267A332A000CAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +109,21 @@
 				60297662268C5F6700C9B0FA /* Info.plist */,
 			);
 			path = SteamyTests;
+			sourceTree = "<group>";
+		};
+		6B334D9E2692EB4A00CDA852 /* Important Screen Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B334D962692D67F00CDA852 /* MessagingView.swift */,
+				6BE65D75267A3328000CAD5E /* Launchscreen.swift */,
+				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
+				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
+				6B586E7B268AED1000993048 /* ForgotPasswordView.swift */,
+				6B334D922692CDAC00CDA852 /* MatchScreenView.swift */,
+				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
+				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
+			);
+			path = "Important Screen Views";
 			sourceTree = "<group>";
 		};
 		6BE65D67267A3328000CAD5E = {
@@ -146,15 +171,13 @@
 		6BFE0966268667F5008261D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6B334D9E2692EB4A00CDA852 /* Important Screen Views */,
 				0C4F346F2688903A00BCDA64 /* Api.swift */,
 				0C4F346E2688903A00BCDA64 /* UserApi.swift */,
-				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
-				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
-				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
-				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
 				602976AC268C83C500C9B0FA /* Validation.swift */,
-				6BE65D75267A3328000CAD5E /* ContentView.swift */,
-				6B586E7B268AED1000993048 /* ForgotPasswordView.swift */,
+				6B334D902692CBE400CDA852 /* InnerProfileView.swift */,
+				6B334D9C2692E60600CDA852 /* EditProfileView.swift */,
+				6B334DA12692F72D00CDA852 /* AddProfileImagePopupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,16 +371,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B334D9D2692E60600CDA852 /* EditProfileView.swift in Sources */,
 				0C4F34712688903A00BCDA64 /* Api.swift in Sources */,
 				6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */,
 				602976AD268C83C500C9B0FA /* Validation.swift in Sources */,
+				6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */,
+				6B334DA22692F72D00CDA852 /* AddProfileImagePopupView.swift in Sources */,
 				0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */,
-				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
+				6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */,
+				6BE65D76267A3328000CAD5E /* Launchscreen.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
 				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,
 				6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */,
 				6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */,
 				6B586E7C268AED1000993048 /* ForgotPasswordView.swift in Sources */,
+				6B334D912692CBE400CDA852 /* InnerProfileView.swift in Sources */,
 				6BFE096926866AE1008261D4 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
