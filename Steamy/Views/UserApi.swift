@@ -10,7 +10,11 @@ import FirebaseAuth
 import FirebaseDatabase
 import ProgressHUD
 
-class UserApi {
+protocol UserServiceProtocol {
+    func signIn(email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void)
+}
+
+class UserApi: UserServiceProtocol {
     
     func signUp(email: String, password: String, firstName: String, lastName: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
@@ -38,6 +42,7 @@ class UserApi {
             }
         }
     }
+    
     
     func signIn(email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authData, error in

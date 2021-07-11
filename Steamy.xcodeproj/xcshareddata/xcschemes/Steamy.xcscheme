@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "602DEF46268BFAAE002360D5"
+               BlueprintIdentifier = "60054977269BAC8900B7D519"
                BuildableName = "SteamyTests.xctest"
                BlueprintName = "SteamyTests"
                ReferencedContainer = "container:Steamy.xcodeproj">

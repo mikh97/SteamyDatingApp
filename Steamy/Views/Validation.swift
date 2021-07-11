@@ -4,7 +4,6 @@
 //
 //  Created by Mikhail Sumawan on 6/30/21.
 //
-// Neeval maybe you can improve this better, I'm not sure how to pass the variables from SignUpView to the functions here don't wanna break your code. I'm trying to put the validation method for sign up input into here so I can test it with the unit Test.
 
 //import Foundation
 //

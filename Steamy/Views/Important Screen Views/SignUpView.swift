@@ -181,24 +181,23 @@ struct SignUpView: View {
                             .foregroundColor(.white)
                             .border(Color.blue, width:5)
                             .cornerRadius(40)
-                        
-                            
                     }
+                    
                     Spacer(minLength: 50).frame(width: 200, height:30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
+                    
                     Button(action: {
-                            print("Login check Pressed")
+                        print("Login check Pressed")
                     }) {
                         Text("Already have an account? Log in here.")
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                    
-                }
+                            .foregroundColor(.white)
+                        
+                    }
                     Spacer(minLength: 50).frame(width: 200, height:20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
                 }
-            
+                
             }
-        
+            
         }
     }
 }

@@ -8,5 +8,4 @@
 import Foundation
 class Api {
     static var User = UserApi()
-    
 }

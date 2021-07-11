@@ -10,6 +10,13 @@ import FirebaseAuth
 import ProgressHUD
 
 struct LoginView: View {
+    
+//    private let User: UserServiceProtocol
+//
+//    init(User: UserServiceProtocol = Api.User.signIn()){
+//        self.User = User
+//    }
+    
     @State var authentication = false
     func signIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         guard !email.isEmpty, !password.isEmpty else {
