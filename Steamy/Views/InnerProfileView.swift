@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// What's with the persistent back button on the top left corner??
 
 struct InnerProfileView: View {
     var body: some View {
@@ -22,7 +23,6 @@ struct InnerProfileView: View {
                     HStack {
                         
                         Spacer(minLength: 30).frame(width: 40, height:0, alignment: .center)
-                        
                         Text("Profile").multilineTextAlignment(.leading).foregroundColor(Color.red)
                             .font(.system(size: 35, weight: .bold))
                         
@@ -31,9 +31,9 @@ struct InnerProfileView: View {
                     
                     HStack{
                         //this image needs to be imported from firebase
-                        Image("maria").resizable().clipShape(Circle())
-                            .overlay(Circle().stroke(Color.black, lineWidth: 4))
-                            .frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        Image("mainGirl").resizable().clipShape(Circle())
+                            .overlay(Circle().stroke(Color.black, lineWidth: 3))
+                            .frame(width: 125, height: 180, alignment: .center)
                             .padding()
                         
                         VStack{
@@ -41,19 +41,20 @@ struct InnerProfileView: View {
                                 .foregroundColor(Color.black)
                                 .multilineTextAlignment(.leading)
                                 .font(.system(size: 25, weight: .bold))
+                            //The @username text should be left align under the user's name
                             Text("@mariacurry")
                                 .multilineTextAlignment(.leading)
                                 .font(.system(size: 15, weight: .light))
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
-                                
+                                .foregroundColor(.gray)
+                            
                         }
                         
                         Spacer(minLength: 30).frame(width: 10, height:0, alignment: .center)
                         
                         NavigationLink(destination: EditProfileView()){
-                            Image(systemName: "pencil.circle.fill").resizable().frame(width:30 , height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Image(systemName: "pencil.circle.fill").resizable().frame(width:30 , height: 30, alignment: .center)
                                 .padding()
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(.red)
                         }
                         
                     }
@@ -66,39 +67,39 @@ struct InnerProfileView: View {
                         
                         //Add a picture
                         NavigationLink(destination: AddProfileImagePopupView()){
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(red: 203/255, green: 203/255, blue: 203/255))
-                                .overlay(Image(systemName: "camera.circle.fill").resizable().frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(.gray))
+                            RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center).foregroundColor(Color(red: 203/255, green: 203/255, blue: 203/255))
+                                .overlay(Image(systemName: "camera.circle.fill").resizable().frame(width: 50, height: 50, alignment: .center).foregroundColor(.gray))
                         }
                         
                         
                         //replace images with images from firebase
                         
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .overlay(Image("image1").resizable().frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).cornerRadius(25))
+                        RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center)
+                            .overlay(Image("girlThree").resizable().frame(width: 125, height: 175, alignment: .center).cornerRadius(25))
                         
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .overlay(Image("image2").resizable().frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).cornerRadius(25)
-                                                                                                                                            )
+                        RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center)
+                            .overlay(Image("girlTwo").resizable().frame(width: 125, height: 175, alignment: .center).cornerRadius(25)
+                            )
                     }
                     
                     
-            
+                    
                     //About me
                     
+                    Spacer(minLength: 30)
                     
-                    Spacer()
-                    
-                    Text("About me").foregroundColor(Color.red)
-                        .font(.system(size: 30, weight: .bold))
+                    //About me text need to left align
+                    Text("About me").foregroundColor(Color.black)
+                        .font(.system(size: 25, weight: .bold))
                         .multilineTextAlignment(.leading)
                     
-                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).frame(width: 375, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 375, height: 125, alignment: /*@START_MENU_TOKEN@*/.center)
                         .foregroundColor(Color(red: 203/255, green: 203/255, blue: 203/255))
                         
                         //the text in the overlay needs to be json parsed from firebase
                         
                         .overlay(Text("Hello my name is Maria Carrey. I am whore from Space Jam. Lebron James ate me out yesterday. HMU. Bitches").fontWeight(.light).foregroundColor(.black).padding(), alignment: .topLeading
-        )
+                        )
                     
                     Spacer()
                     
