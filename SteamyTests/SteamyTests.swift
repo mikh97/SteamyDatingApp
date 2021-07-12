@@ -6,8 +6,6 @@
 //
 
 import XCTest
-@testable import FirebaseAuth
-@testable import FirebaseDatabase
 @testable import Steamy
 
 class SteamyTests: XCTestCase {
