@@ -20,12 +20,12 @@ struct ProfileView: View {
                 .tabItem {
                     Image(systemName: "person.2.fill")
                     Text("Profile")
-            }
+                }
             
             MatchScreenView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("Match")
+                    Text("Discover")
                 }
             
             MessagingView()
@@ -33,12 +33,9 @@ struct ProfileView: View {
                     Image(systemName: "bubble.left")
                     Text("Messaging")
                 }
-            
-            
-            
-        }
         }
     }
+}
 
 
 struct ProfileView_Previews: PreviewProvider {

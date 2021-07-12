@@ -14,6 +14,7 @@
 		6005492C269BA94900B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9F3519E2577FA54F2FF09E /* Pods_Steamy.framework */; };
 		6005497B269BAC8900B7D519 /* SteamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005497A269BAC8900B7D519 /* SteamyTests.swift */; };
 		602976AD268C83C500C9B0FA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602976AC268C83C500C9B0FA /* Validation.swift */; };
+		606CAE6C269CA4DF00013EC0 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606CAE6B269CA4DF00013EC0 /* CardModel.swift */; };
 		6B334D912692CBE400CDA852 /* InnerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* InnerProfileView.swift */; };
 		6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D922692CDAC00CDA852 /* MatchScreenView.swift */; };
 		6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessagingView.swift */; };
@@ -54,6 +55,7 @@
 		6005497A269BAC8900B7D519 /* SteamyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyTests.swift; sourceTree = "<group>"; };
 		6005497C269BAC8900B7D519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602976AC268C83C500C9B0FA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		606CAE6B269CA4DF00013EC0 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		6B334D902692CBE400CDA852 /* InnerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerProfileView.swift; sourceTree = "<group>"; };
 		6B334D922692CDAC00CDA852 /* MatchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScreenView.swift; sourceTree = "<group>"; };
 		6B334D962692D67F00CDA852 /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				6B334D922692CDAC00CDA852 /* MatchScreenView.swift */,
 				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
 				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
+				606CAE6B269CA4DF00013EC0 /* CardModel.swift */,
 			);
 			path = "Important Screen Views";
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				602976AD268C83C500C9B0FA /* Validation.swift in Sources */,
 				6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */,
 				6B334DA22692F72D00CDA852 /* AddProfileImagePopupView.swift in Sources */,
+				606CAE6C269CA4DF00013EC0 /* CardModel.swift in Sources */,
 				0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */,
 				6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */,
 				6BE65D76267A3328000CAD5E /* Launchscreen.swift in Sources */,
