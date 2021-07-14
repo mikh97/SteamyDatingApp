@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import ProgressHUD
 
 // What's with the persistent back button on the top left corner??
 
 struct InnerProfileView: View {
+    
+    @EnvironmentObject var user: UserApi
+    
     var body: some View {
         
         
@@ -103,7 +107,15 @@ struct InnerProfileView: View {
                     
                     Spacer()
                     
-                    
+                    Button(action: {
+                        user.signOut { errorMessage in
+                            ProgressHUD.showError(errorMessage)
+                        }
+                        
+                    }, label: {
+                        Text("Sign Out")
+                    })
+                    .padding()
                 }
                 
             }

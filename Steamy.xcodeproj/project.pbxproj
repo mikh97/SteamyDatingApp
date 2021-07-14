@@ -24,7 +24,7 @@
 		6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */; };
 		6BD9B77C26868B7C00D8726E /* App_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD9B77B26868B7B00D8726E /* App_logo.png */; };
 		6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D73267A3328000CAD5E /* SteamyApp.swift */; };
-		6BE65D76267A3328000CAD5E /* Launchscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D75267A3328000CAD5E /* Launchscreen.swift */; };
+		6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D75267A3328000CAD5E /* ContentView.swift */; };
 		6BE65D78267A332A000CAD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D77267A332A000CAD5E /* Assets.xcassets */; };
 		6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */; };
 		6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF62680201C00C1A094 /* SignUpView.swift */; };
@@ -66,7 +66,7 @@
 		6BD9B77B26868B7B00D8726E /* App_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_logo.png; sourceTree = "<group>"; };
 		6BE65D70267A3328000CAD5E /* Steamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE65D73267A3328000CAD5E /* SteamyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyApp.swift; sourceTree = "<group>"; };
-		6BE65D75267A3328000CAD5E /* Launchscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchscreen.swift; sourceTree = "<group>"; };
+		6BE65D75267A3328000CAD5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6BE65D77267A332A000CAD5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BE65D7C267A332A000CAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				6B334D962692D67F00CDA852 /* MessagingView.swift */,
-				6BE65D75267A3328000CAD5E /* Launchscreen.swift */,
+				6BE65D75267A3328000CAD5E /* ContentView.swift */,
 				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
 				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
 				6B586E7B268AED1000993048 /* ForgotPasswordView.swift */,
@@ -383,7 +383,7 @@
 				606CAE6C269CA4DF00013EC0 /* CardModel.swift in Sources */,
 				0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */,
 				6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */,
-				6BE65D76267A3328000CAD5E /* Launchscreen.swift in Sources */,
+				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
 				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,
 				6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */,

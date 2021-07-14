@@ -17,7 +17,10 @@ struct LoginView: View {
 //        self.User = User
 //    }
     
-    @State var authentication = false
+//    @State var authentication = false
+    
+    @EnvironmentObject var user: UserApi
+    
     func signIn(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         guard !email.isEmpty, !password.isEmpty else {
             ProgressHUD.showError("Email/Password missing.")
@@ -25,9 +28,9 @@ struct LoginView: View {
         }
         
         ProgressHUD.show()
-        Api.User.signIn(email: email, password: password) {
+        user.signIn(email: email, password: password) {
             ProgressHUD.dismiss()
-            authentication = true
+//            authentication = true
             onSuccess()
         } onError: { errorMessage in
             onError(errorMessage)
@@ -74,7 +77,9 @@ struct LoginView: View {
                         
                         Spacer(minLength: 50).frame(width: 65, height:50, alignment: .center)
                         
-                        TextField("email", text: $email)
+                        TextField("Email", text: $email)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
                             .background(Color.white)
                             .cornerRadius(5)
                             .frame(width: 250, height: 0, alignment: .center)
@@ -82,7 +87,7 @@ struct LoginView: View {
                         
                         Spacer(minLength: 50).frame(width: 65, height:5, alignment: .center)
                         
-                        TextField("password", text: $password)
+                        SecureField("Password", text: $password)
                             .background(Color.white)
                             .cornerRadius(5)
                             .frame(width: 250, height: 75, alignment: .center)
@@ -105,10 +110,6 @@ struct LoginView: View {
                                 ProgressHUD.showError(errorMessage)
                             }
                             
-                            
-                            //                            if Auth.auth().currentUser != nil {
-                            //                                print("signed in")                            }
-                            
                         }) {
                             
                             Text("Login")
@@ -123,23 +124,23 @@ struct LoginView: View {
                         }
                         
                         
-                        if (authentication == true){
-                            NavigationLink(destination: ProfileView(),isActive:$authentication, label: {Text("Login Sucessfull. Continue")
-                                .frame(width: 250, height: 0, alignment: .center)
-                                .font(.system(size: 20, weight: .semibold, design: .rounded))
-                                .padding()
-                                .background(Color.yellow)
-                                .foregroundColor(.white)
-                                .border(Color.yellow, width:5)
-                                .cornerRadius(40)
-                            })
-                        }
-                        
-                        
-                        
-                        
-                        //Back to signup Page
-                        
+//                        if (authentication == true){
+//                            NavigationLink(destination: ProfileView(),isActive:$authentication, label: {Text("Login Sucessfull. Continue")
+//                                .frame(width: 250, height: 0, alignment: .center)
+//                                .font(.system(size: 20, weight: .semibold, design: .rounded))
+//                                .padding()
+//                                .background(Color.yellow)
+//                                .foregroundColor(.white)
+//                                .border(Color.yellow, width:5)
+//                                .cornerRadius(40)
+//                            })
+//                        }
+//
+//
+//
+//
+//                        //Back to signup Page
+//
                         NavigationLink(destination: SignUpView()){
                             Text("Do not have an account? Sign up.")
                                 .foregroundColor(.white)

@@ -18,7 +18,7 @@ struct ProfileView: View {
             
             InnerProfileView()
                 .tabItem {
-                    Image(systemName: "person.2.fill")
+                    Image(systemName: "person")
                     Text("Profile")
                 }
             

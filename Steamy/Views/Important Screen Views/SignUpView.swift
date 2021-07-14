@@ -20,6 +20,7 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var confirm_password: String = ""
     
+    @EnvironmentObject var user: UserApi
     
     func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         guard !first_name.isEmpty,
@@ -59,7 +60,7 @@ struct SignUpView: View {
         }
         
         ProgressHUD.show()
-        Api.User.signUp(email: email, password: password, firstName: first_name, lastName: last_name) {
+        user.signUp(email: email, password: password, firstName: first_name, lastName: last_name) {
             ProgressHUD.dismiss()
             onSuccess()
         } onError: { errorMessage in
@@ -121,6 +122,8 @@ struct SignUpView: View {
                     Spacer(minLength: 50).frame(width: 65, height:0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
                     TextField("Email", text: $email)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                         .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
                         .cornerRadius(5)
                         .frame(width: 250, height: 15, alignment: .center)
@@ -128,7 +131,9 @@ struct SignUpView: View {
                     
                     Spacer(minLength: 50).frame(width: 65, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-                    TextField("Password", text: $password)
+                    SecureField("Password", text: $password)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                         .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
                         .cornerRadius(5)
                         .frame(width: 250, height: 55, alignment: .center)
@@ -136,7 +141,9 @@ struct SignUpView: View {
                     
                     Spacer(minLength: 50).frame(width: 65, height:0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-                    TextField("Confirm Password", text: $confirm_password)
+                    SecureField("Confirm Password", text: $confirm_password)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                         .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
                         .cornerRadius(5)
                         .frame(width: 250, height: 35, alignment: .center)
@@ -150,7 +157,6 @@ struct SignUpView: View {
                     Button(action: {
                             print("Create Pressed")
                         signUp {
-                            // switch view if success
                         } onError: { errorMessage in
                             ProgressHUD.showError(errorMessage)
                         }
