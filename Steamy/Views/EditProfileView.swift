@@ -9,95 +9,65 @@ import SwiftUI
 
 struct EditProfileView: View {
     
+    @State var firstName: String = ""
+    @State var lastName: String = ""
     @State var age: String=""
-    @State var gender: String=""
-    @State var location: String=""
+    @State var selectedGender = ""
+//    @State var location: String=""
     @State var info_saved = false
+//    @State var selectedLocation = ""
+    
+    @Binding var showSheetView: Bool
+    
+    @State var gender = ["Male", "Female"]
+    
+    func getDetails() {
+        Api.User.getProfileDetails()
+    }
+    
     var body: some View {
-        ZStack{
-            VStack {
-            Text("Edit Profile").multilineTextAlignment(.leading).foregroundColor(Color.red)
-                .font(.system(size: 35, weight: .bold))
+        
+        NavigationView {
+            
+            Form {
                 
-                Spacer()
+                Section(header: Text("First Name")) {
+                    TextField("First Name", text: $firstName)
+                }
                 
-                HStack{
-                    //this image needs to be imported from firebase
-                    Image("maria").resizable().clipShape(Circle())
-                        .overlay(Circle().stroke(Color.black, lineWidth: 4))
-                        .frame(width: 125, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding()
-                    
-                    VStack{
-                        Text("Maria Carrey")
-                            .foregroundColor(Color.red)
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 25, weight: .bold))
-                        Text("@mariacurry")
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 15, weight: .light))
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
-                            
+                Section(header: Text("Last Name")) {
+                    TextField("Last Name", text: $lastName)
+                }
+                
+                Section(header: Text("Age")) {
+                    TextField("Age", text: $age)
+                }
+                
+                Picker("Gender", selection: $selectedGender) {
+                    ForEach(gender, id: \.self) {
+                        Text($0)
                     }
-                    
                 }
-                
-                VStack {
-                Spacer()
-                
-                TextField("Age", text: $age)
-                    .background(Color.red)
-                    .cornerRadius(5)
-                    .frame(width: 250, height: 0, alignment: .center)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Spacer()
-                
-                TextField("Gender", text: $gender)
-                    .background(Color.red)
-                    .cornerRadius(5)
-                    .frame(width: 250, height: 0, alignment: .center)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Spacer()
-                
-                TextField("Location", text: $location)
-                    .background(Color.red)
-                    .cornerRadius(5)
-                    .frame(width: 250, height: 0, alignment: .center)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Spacer()
-                    
-                }
-                
-                
-                Button(action: {
-                   //Save info to firebase
-                    print("Hey")
-                    info_saved = true
-                    }){
-                    Text("Save").frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 20, weight: .semibold, design: .rounded))
-                        .padding()
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
-                        .border(Color.yellow, width:5)
-                        .cornerRadius(40)
-                }
-
-                
-
-                if (info_saved == true){
-                    Text("Information Saved.")
-                        .font(.system(size: 20, weight: .semibold, design: .rounded ))
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.leading)                }
- 
-            
             }
+            .padding(.top, 10)
             
-            
+            .navigationBarTitle("Edit Profile", displayMode: .inline)
+            .navigationBarItems(leading: Button(action: {
+                print("dismiss sheet view - cancel")
+                self.showSheetView = false
+                
+            }, label: {
+                Text("Cancel")
+                
+            }), trailing: Button(action: {
+                // save data to firebase
+                Api.User.updateProfileDetails()
+                print("dismiss sheet view - done")
+                self.showSheetView = false
+                
+            }) {
+                Text("Done").bold()
+            })
         }
         
     }
@@ -105,6 +75,6 @@ struct EditProfileView: View {
 
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        EditProfileView(showSheetView: .constant(true))
     }
 }
