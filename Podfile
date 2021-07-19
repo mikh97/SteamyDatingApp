@@ -10,6 +10,8 @@ target 'Steamy' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'ProgressHUD'
+  #pod 'Kingfisher', '5.15.7'
+  pod 'Firebase/Storage'
 
 end
 
