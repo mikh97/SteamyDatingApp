@@ -141,6 +141,8 @@ struct LoginView: View {
 //
 //                        //Back to signup Page
 //
+                        Spacer()
+                        
                         NavigationLink(destination: SignUpView()){
                             Text("Do not have an account? Sign up.")
                                 .foregroundColor(.white)
@@ -150,6 +152,8 @@ struct LoginView: View {
                     
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
         }
     
     
