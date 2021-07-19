@@ -22,6 +22,10 @@ class UserApi: ObservableObject, UserServiceProtocol {
         return Auth.auth().currentUser != nil
     }
     
+    var currentUserId: String {
+        return Auth.auth().currentUser != nil ? Auth.auth().currentUser!.uid : ""
+    }
+    
     func signUp(email: String, password: String, firstName: String, lastName: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             if error != nil {
@@ -75,5 +79,24 @@ class UserApi: ObservableObject, UserServiceProtocol {
         try? Auth.auth().signOut()
         self.signedIn = false
         
+    }
+    
+    func getProfileDetails() {
+        let auth = Auth.auth()
+        Database.database().reference().child("users").child(auth.currentUser!.uid).getData { error, result in
+            if error == nil {
+                print(result)
+                
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    
+    
+    
+    
+    func updateProfileDetails() {
+
     }
 }
