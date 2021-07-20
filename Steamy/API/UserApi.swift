@@ -37,9 +37,10 @@ class UserApi: ObservableObject, UserServiceProtocol {
                 let dict: Dictionary<String, Any> = [
                     "uid": authData.user.uid,
                     "email": authData.user.email,
-                    "first_name": firstName,
-                    "last_name": lastName,
+                    "firstName": firstName,
+                    "lastName": lastName,
                     "profileImageUrl": "",
+                    "status": "Welcome to Steamy"
                 ]
                 
                 Database.database().reference().child("users").child(authData.user.uid).updateChildValues(dict) { error, ref in
@@ -81,22 +82,26 @@ class UserApi: ObservableObject, UserServiceProtocol {
         
     }
     
-    func getProfileDetails() {
-        let auth = Auth.auth()
-        Database.database().reference().child("users").child(auth.currentUser!.uid).getData { error, result in
-            if error == nil {
-                print(result)
-                
-            } else {
-                print(error?.localizedDescription)
+    func getUserDetails(uid: String, onSuccess: @escaping(UserCompletion)) {
+        let ref = Ref().databaseSpecificUser(uid: uid)
+        ref.observe(.value) { (snapshot) in
+            if let dict = snapshot.value as? Dictionary<String, Any> {
+                if let user = User.transformUser(dict: dict) {
+                    onSuccess(user)
+                }
             }
         }
     }
     
-    
-    
-    
-    func updateProfileDetails() {
-
+    func saveUserProfile(dict: Dictionary<String, Any>,  onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        Ref().databaseSpecificUser(uid: Api.User.currentUserId).updateChildValues(dict) { (error, dataRef) in
+            if error != nil {
+                onError(error!.localizedDescription)
+                return
+            }
+            onSuccess()
+        }
     }
 }
+
+typealias UserCompletion = (User) -> Void

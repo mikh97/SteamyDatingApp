@@ -19,17 +19,10 @@ struct InnerProfileView: View {
     @State private var isShowPhotoLibrary = false
     @State var profileImage = UIImage()
     
-    var currentUserDetails: DataSnapshot {
-        var data: DataSnapshot? = nil
-        Database.database().reference().child("users").child(Api.User.currentUserId).getData { error, result in
-            if error != nil {
-                ProgressHUD.showError(error!.localizedDescription)
-                return
-            }
-            data = result
-        }
-        return data!
-    }
+    @State var firstName = ""
+    @State var lastName = ""
+    @State var profileImageUrl = ""
+    @State var status = ""
     
     var body: some View {
         
@@ -54,16 +47,16 @@ struct InnerProfileView: View {
                         VStack{
                             //this image needs to be imported from firebase
                             ZStack(alignment: .topTrailing) {
-//                                Image(uiImage: self.profileImage)
-//                                    .resizable()
-//                                    .clipShape(Circle())
-//                                    .overlay(Circle().stroke(Color.black, lineWidth: 3))
-//                                    .frame(width: 125, height: 180, alignment: .center)
-//                                    .padding()
-//                                RoundedImage(url: URL(string: "https://picsum.photos/400"))
+                                //                                Image(uiImage: self.profileImage)
+                                //                                    .resizable()
+                                //                                    .clipShape(Circle())
+                                //                                    .overlay(Circle().stroke(Color.black, lineWidth: 3))
+                                //                                    .frame(width: 125, height: 180, alignment: .center)
+                                //                                    .padding()
+                                //                                RoundedImage(url: URL(string: "https://picsum.photos/400"))
                                 
                                 
-                                RoundedImage()
+                                RoundedImage(url: URL(string: profileImageUrl))
                                     .frame(height: 200)
                                     
                                 Button(action: {
@@ -87,16 +80,16 @@ struct InnerProfileView: View {
                             
                             Spacer().frame(height: 18)
                             
-                            Text("Maria Carrey")
+                            Text(firstName + " " + lastName)
                                 .multilineTextAlignment(.leading)
                                 .font(.system(size: 25, weight: .bold))
                             
-                            Spacer().frame(height: 8)
+                            //                            Spacer().frame(height: 8)
                             
-                            Text("@mariacurry")
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 15, weight: .light))
-                                .foregroundColor(.gray)
+                            //                            Text("@mariacurry")
+                            //                                .multilineTextAlignment(.leading)
+                            //                                .font(.system(size: 15, weight: .light))
+                            //                                .foregroundColor(.gray)
                             
                             Spacer(minLength: 30).frame(width: 10, height:0, alignment: .center)
                             
@@ -157,7 +150,7 @@ struct InnerProfileView: View {
                                 
                                 //the text in the overlay needs to be json parsed from firebase
                                 
-                                .overlay(Text("Hello my name is Maria Carrey. I am whore from Space Jam. Lebron James ate me out yesterday. HMU. Bitches").fontWeight(.light).foregroundColor(.black).padding(), alignment: .topLeading)
+                                .overlay(Text(status).fontWeight(.light).foregroundColor(.black).padding(), alignment: .topLeading)
                         }
                         
                         
@@ -177,6 +170,14 @@ struct InnerProfileView: View {
             .padding(.top, 1)
             .navigationBarHidden(true)
             .navigationTitle("")
+            .onAppear {
+                Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
+                    firstName = user.firstName
+                    lastName = user.lastName
+                    profileImageUrl = user.profileImageUrl == "" ? "https://picsum.photos/400" : user.profileImageUrl
+                    status = user.status
+                }
+            }
             
         }
         
@@ -193,22 +194,47 @@ struct MatchView_Previews: PreviewProvider {
 struct StatusView: View {
     @State private var statusText: String = ""
     @State private var wordCount: Int = 0
-
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             TextEditor(text: $statusText)
+                .onAppear {
+                    Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
+                        statusText = user.status
+                    }
+                }
                 .lineSpacing(20)
                 .autocapitalization(.sentences)
                 .disableAutocorrection(true)
                 .padding()
                 .navigationBarTitle("Status", displayMode: .inline)
-                .navigationBarItems(trailing: Button(action: {
-                    // save data to firebase
-                    print("dismiss status view - done")
-                    
-                }) {
-                    Text("Done").bold()
-                })
+                .navigationBarItems(trailing: NavigationLink(destination: InnerProfileView()) {
+                    Button(action: {
+                        // save data to firebase
+                        ProgressHUD.show()
+                        let dict: Dictionary<String, Any> = [
+                            "status": statusText
+                        ]
+                        Api.User.saveUserProfile(dict: dict) {
+                            print("status update success")
+                        } onError: { errorMessage in
+                            ProgressHUD.showError(errorMessage)
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            ProgressHUD.dismiss()
+                            self.presentationMode.wrappedValue.dismiss()
+                            print("dismiss status view - done")
+                        }
+                        
+                        
+                    }) {
+                        Text("Done").bold()
+                    }
+                }
+                )
                 .onChange(of: statusText) { value in
                     let words = statusText.split { $0 == " " || $0.isNewline }
                     self.wordCount = words.count

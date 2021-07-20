@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import ProgressHUD
+import Combine
 
 struct EditProfileView: View {
     
     @State var firstName: String = ""
     @State var lastName: String = ""
-    @State var age: String=""
-    @State var selectedGender = ""
+    @State var age = ""
+    @State var selectedGender: String = ""
 //    @State var location: String=""
     @State var info_saved = false
 //    @State var selectedLocation = ""
@@ -21,8 +23,21 @@ struct EditProfileView: View {
     
     @State var gender = ["Male", "Female"]
     
-    func getDetails() {
-        Api.User.getProfileDetails()
+    func updateUserProfile() {
+        let dict: Dictionary<String, Any> = [
+            "firstName": firstName,
+            "lastName": lastName,
+            "age": age,
+            "gender": selectedGender
+        ]
+        
+        Api.User.saveUserProfile(dict: dict) {
+            print("profile update success")
+            ProgressHUD.dismiss()
+            self.showSheetView = false
+        } onError: { errorMessage in
+            ProgressHUD.showError(errorMessage)
+        }
     }
     
     var body: some View {
@@ -41,13 +56,25 @@ struct EditProfileView: View {
                 
                 Section(header: Text("Age")) {
                     TextField("Age", text: $age)
+                        .keyboardType(.numberPad)
+                        .onReceive(Just(age)) { newValue in
+                            let filtered = newValue.filter { "0123456789".contains($0) }
+                            if filtered != newValue {
+                                self.age = filtered
+                            }
+                        }
+                    
                 }
                 
-                Picker("Gender", selection: $selectedGender) {
-                    ForEach(gender, id: \.self) {
-                        Text($0)
+                Section(header: Text("Gender")) {
+                    Picker("Gender", selection: $selectedGender) {
+                        ForEach(gender, id: \.self) {
+                            Text($0)
+                        }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
+                
             }
             .padding(.top, 10)
             
@@ -61,13 +88,22 @@ struct EditProfileView: View {
                 
             }), trailing: Button(action: {
                 // save data to firebase
-                Api.User.updateProfileDetails()
+                ProgressHUD.show()
+                updateUserProfile()
                 print("dismiss sheet view - done")
-                self.showSheetView = false
                 
             }) {
                 Text("Done").bold()
             })
+            .onAppear {
+                Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
+                    firstName = user.firstName
+                    lastName = user.lastName
+                    age = user.age ?? ""
+                    selectedGender = user.gender ?? ""
+                }
+            }
+            
         }
         
     }
