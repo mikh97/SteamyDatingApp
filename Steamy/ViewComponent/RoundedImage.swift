@@ -14,7 +14,7 @@ struct RoundedImage: View {
     
     var body: some View {
 
-        KFImage(url == nil ? URL(string: "https://picsum.photos/400") : url)
+        KFImage(url == nil ? URL(string: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png") : url)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
