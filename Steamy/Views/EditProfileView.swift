@@ -103,6 +103,7 @@ struct EditProfileView: View {
                     selectedGender = user.gender ?? ""
                 }
             }
+            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
             
         }
         
