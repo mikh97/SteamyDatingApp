@@ -23,7 +23,11 @@
 		6005492C269BA94900B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9F3519E2577FA54F2FF09E /* Pods_Steamy.framework */; };
 		6005497B269BAC8900B7D519 /* SteamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005497A269BAC8900B7D519 /* SteamyTests.swift */; };
 		602976AD268C83C500C9B0FA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602976AC268C83C500C9B0FA /* Validation.swift */; };
-		606CAE6C269CA4DF00013EC0 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606CAE6B269CA4DF00013EC0 /* CardModel.swift */; };
+		6041934A26A8D63D006FAB1D /* CardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041934926A8D63D006FAB1D /* CardSection.swift */; };
+		6041935026A8D69B006FAB1D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041934F26A8D69B006FAB1D /* Card.swift */; };
+		6041935E26A8D8C5006FAB1D /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041935D26A8D8C5006FAB1D /* OptionSection.swift */; };
+		6041936226A8D951006FAB1D /* DiscoverySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041936126A8D951006FAB1D /* DiscoverySection.swift */; };
+		6041937026A8DE42006FAB1D /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041936F26A8DE42006FAB1D /* CView.swift */; };
 		6B334D912692CBE400CDA852 /* InnerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* InnerProfileView.swift */; };
 		6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D922692CDAC00CDA852 /* MatchScreenView.swift */; };
 		6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessagingView.swift */; };
@@ -72,7 +76,11 @@
 		6005497A269BAC8900B7D519 /* SteamyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyTests.swift; sourceTree = "<group>"; };
 		6005497C269BAC8900B7D519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602976AC268C83C500C9B0FA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		606CAE6B269CA4DF00013EC0 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		6041934926A8D63D006FAB1D /* CardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSection.swift; sourceTree = "<group>"; };
+		6041934F26A8D69B006FAB1D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		6041935D26A8D8C5006FAB1D /* OptionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
+		6041936126A8D951006FAB1D /* DiscoverySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverySection.swift; sourceTree = "<group>"; };
+		6041936F26A8DE42006FAB1D /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
 		6B334D902692CBE400CDA852 /* InnerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerProfileView.swift; sourceTree = "<group>"; };
 		6B334D922692CDAC00CDA852 /* MatchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScreenView.swift; sourceTree = "<group>"; };
 		6B334D962692D67F00CDA852 /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
@@ -161,6 +169,16 @@
 			path = SteamyTests;
 			sourceTree = "<group>";
 		};
+		6041934026A8D553006FAB1D /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				6041936126A8D951006FAB1D /* DiscoverySection.swift */,
+				6041934926A8D63D006FAB1D /* CardSection.swift */,
+				6041935D26A8D8C5006FAB1D /* OptionSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
 		6B334D9E2692EB4A00CDA852 /* Important Screen Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +190,7 @@
 				6B334D922692CDAC00CDA852 /* MatchScreenView.swift */,
 				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
 				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
-				606CAE6B269CA4DF00013EC0 /* CardModel.swift */,
+				6041936F26A8DE42006FAB1D /* CView.swift */,
 			);
 			path = "Important Screen Views";
 			sourceTree = "<group>";
@@ -225,6 +243,8 @@
 		6BFE0966268667F5008261D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6041934F26A8D69B006FAB1D /* Card.swift */,
+				6041934026A8D553006FAB1D /* Sections */,
 				6B334D9E2692EB4A00CDA852 /* Important Screen Views */,
 				602976AC268C83C500C9B0FA /* Validation.swift */,
 				6B334D902692CBE400CDA852 /* InnerProfileView.swift */,
@@ -432,23 +452,27 @@
 			files = (
 				6B334D9D2692E60600CDA852 /* EditProfileView.swift in Sources */,
 				0C4F34712688903A00BCDA64 /* Api.swift in Sources */,
+				6041936226A8D951006FAB1D /* DiscoverySection.swift in Sources */,
 				0CBD4A1726A4F4FA00E743C1 /* Ref.swift in Sources */,
 				6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */,
 				602976AD268C83C500C9B0FA /* Validation.swift in Sources */,
 				6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */,
 				6B334DA22692F72D00CDA852 /* AddProfileImagePopupView.swift in Sources */,
-				606CAE6C269CA4DF00013EC0 /* CardModel.swift in Sources */,
 				0CBD4A1D26A789A800E743C1 /* ImagePickerWithEditing.swift in Sources */,
 				0CBD4A0A26A4C75500E743C1 /* ImagePicker.swift in Sources */,
+				6041935026A8D69B006FAB1D /* Card.swift in Sources */,
 				0CBD4A0C26A4D35D00E743C1 /* FullWidthTextButton.swift in Sources */,
 				0CBD4A1426A4F3AE00E743C1 /* StorageService.swift in Sources */,
 				0CBD4A0F26A4D69E00E743C1 /* RoundedImage.swift in Sources */,
 				0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */,
+				6041937026A8DE42006FAB1D /* CView.swift in Sources */,
 				6B334D932692CDAC00CDA852 /* MatchScreenView.swift in Sources */,
+				6041934A26A8D63D006FAB1D /* CardSection.swift in Sources */,
 				0C09BE4126A24E14000A2B29 /* Extension.swift in Sources */,
 				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
 				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,
+				6041935E26A8D8C5006FAB1D /* OptionSection.swift in Sources */,
 				6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */,
 				6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */,
 				0CBD4A1926A5F9DD00E743C1 /* User.swift in Sources */,
