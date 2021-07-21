@@ -2,14 +2,14 @@
 //  ImagePicker.swift
 //  Steamy
 //
-//  Created by Chee Jun Wong on 7/14/21.
+//  Created by Chee Jun Wong on 7/21/21.
 //
 
 
 import SwiftUI
 import ProgressHUD
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePickerWithEditing: UIViewControllerRepresentable {
     
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var imageType: String
@@ -17,17 +17,17 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage
     @Environment(\.presentationMode) private var presentationMode
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerWithEditing>) -> UIImagePickerController {
         
         let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = sourceType
         imagePicker.delegate = context.coordinator
         
         return imagePicker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePickerWithEditing>) {
         
     }
     
@@ -37,18 +37,19 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
-        var parent: ImagePicker
+        var parent: ImagePickerWithEditing
         
-        init(_ parent: ImagePicker) {
+        init(_ parent: ImagePickerWithEditing) {
             self.parent = parent
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
-            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
                 parent.selectedImage = image
-                if parent.imageType == "gallery" {
-                    StorageService.saveGalleryPhoto(image: image, uid: Api.User.currentUserId) {
+                // send the image to firebase
+                if parent.imageType == "profile" {
+                    StorageService.savePhotoProfile(image: image, uid: Api.User.currentUserId) {
                     } onError: { errorMessage in
                         ProgressHUD.showError(errorMessage)
                     }
