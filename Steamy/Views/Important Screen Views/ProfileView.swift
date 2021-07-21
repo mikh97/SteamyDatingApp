@@ -12,27 +12,32 @@ struct ProfileView: View {
     
     @State var email = ""
     @State var password = ""
+    @State private var selection = 2
+    
     var body: some View {
         
-        TabView {
+        TabView(selection: $selection) {
             
             InnerProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
                 }
+                .tag(1)
             
             MatchScreenView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Discover")
                 }
+                .tag(2)
             
             MessagingView()
                 .tabItem {
                     Image(systemName: "bubble.left")
                     Text("Messaging")
                 }
+                .tag(3)
         }
     }
 }
