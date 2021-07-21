@@ -30,26 +30,40 @@ struct MatchScreenView: View {
                 .padding()
             }
             
-            // Like and Dislike button Stack
             HStack {
-            }
-            
-            // Navigation Stack
-            HStack(spacing: 40) {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Image(systemName: "person.2.fill")
-                    Text("Profile")
+                Button(action: {}) {
+                    Image(systemName: "arrow.counterclockwise")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color.gray.opacity(0.8))
+                        .frame(width: 32, height: 32)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .shadow(radius: 6)
                 }
+                
+                Button(action: {}) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color.gray.opacity(0.8))
+                        .frame(width: 32, height: 32)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .shadow(radius: 6)
+                }
+                
                 Button(action: {}) {
                     Image(systemName: "heart")
-                    Text("Discover")
-                }
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Image(systemName: "bubble.left")
-                    Text("Messaging")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color.gray.opacity(0.8))
+                        .frame(width: 32, height: 32)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .shadow(radius: 6)
                 }
                 
             }
+            
+            
         }
     }
 }
