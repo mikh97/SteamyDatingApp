@@ -9,6 +9,7 @@ import SwiftUI
 import ProgressHUD
 import FirebaseDatabase
 import FirebaseAuth
+import KingfisherSwiftUI
 
 // What's with the persistent back button on the top left corner??
 
@@ -17,12 +18,19 @@ struct InnerProfileView: View {
     @EnvironmentObject var user: UserApi
     @State var showSheetView = false
     @State private var isShowPhotoLibrary = false
+    @State private var isShowPhotoLibraryGallery = false
     @State var profileImage = UIImage()
     
     @State var firstName = ""
     @State var lastName = ""
     @State var profileImageUrl = ""
     @State var status = ""
+    
+    @State var galleryDict = Dictionary<String, String>()
+    @State var galleryUrlArray = [String]()
+    @State var isGalleryEmpty = false
+    @State var keys = [String]()
+    @State var values = [String]()
     
     var body: some View {
         
@@ -74,7 +82,7 @@ struct InnerProfileView: View {
                                 .padding(.vertical, 10)
                                 .offset(x: -10)
                                 .sheet(isPresented: $isShowPhotoLibrary) {
-                                    ImagePicker(sourceType: .photoLibrary, imageType: "profile", selectedImage: self.$profileImage)
+                                    ImagePickerWithEditing(sourceType: .photoLibrary, imageType: "profile", selectedImage: self.$profileImage)
                                 }
                             }
                             
@@ -106,30 +114,48 @@ struct InnerProfileView: View {
                         //Image List
                         
                         Spacer()
+                        
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 
                                 Button(action: {
-                                    self.isShowPhotoLibrary = true
+                                    self.isShowPhotoLibraryGallery = true
                                 }) {
                                     RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center).foregroundColor(Color(red: 203/255, green: 203/255, blue: 203/255))
-                                        .overlay(Image(systemName: "camera.circle.fill").resizable().frame(width: 50, height: 50, alignment: .center).foregroundColor(.gray))
+                                        .overlay(Image(systemName: "plus.circle.fill").resizable().frame(width: 50, height: 50, alignment: .center).foregroundColor(.gray))
                                 }
-                                .sheet(isPresented: $isShowPhotoLibrary) {
+                                .sheet(isPresented: $isShowPhotoLibraryGallery) {
                                     ImagePicker(sourceType: .photoLibrary, imageType: "gallery",  selectedImage: self.$profileImage)
                                 }
                                 
-                                // loop the images from firebase
-                                
-                                RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center)
-                                    .overlay(Image("girlThree").resizable().frame(width: 125, height: 175, alignment: .center).cornerRadius(25))
-                                
-                                RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center)
-                                    .overlay(Image("girlTwo").resizable().frame(width: 125, height: 175, alignment: .center).cornerRadius(25))
-                                
-                                RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center)
-                                    .overlay(Image("girlTwo").resizable().frame(width: 125, height: 175, alignment: .center).cornerRadius(25))
-                                
+                                if isGalleryEmpty {
+                                    Text("Add images to the gallery.")
+                                        .padding()
+                                        .font(Font.system(size: 15, weight: .semibold))
+                                        .foregroundColor(Color(UIColor.white))
+                                        .padding([.top, .bottom], 10)
+                                        .frame(height: 175)
+                                        .cornerRadius(25)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 25)
+                                                .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                        )
+                                        .background(Color.red)
+                                        .cornerRadius(25)
+                                        .frame(maxWidth: .infinity)
+                                        
+                                } else {
+                                    ForEach(galleryDict.sorted(by: >), id: \.key) { key, url in
+                                        NavigationLink(destination: GalleryPhotoView(url: url)) {
+                                            KFImage(URL(string: url))
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                                .frame(width: 125, height: 175, alignment: .center)
+                                                .cornerRadius(25)
+                                        }
+                                    }
+                                }
                             }
                             
                         }
@@ -177,6 +203,17 @@ struct InnerProfileView: View {
                     profileImageUrl = user.profileImageUrl == "" ? "https://picsum.photos/400" : user.profileImageUrl
                     status = user.status
                 }
+                Api.User.getGallery(uid: Api.User.currentUserId) { dict in
+                    galleryDict = dict
+                    keys = dict.map{$0.key}
+                    values = dict.map {$0.value}
+                    isGalleryEmpty = false
+                } onEmpty: { isEmpty in
+                    isGalleryEmpty = isEmpty
+                }
+
+
+
             }
             
         }
@@ -192,30 +229,35 @@ struct MatchView_Previews: PreviewProvider {
 
 
 struct StatusView: View {
-    @State private var statusText: String = ""
     @State private var wordCount: Int = 0
+    
+    @ObservedObject var textFieldManager = TextFieldManager()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            TextEditor(text: $statusText)
+            TextEditor(text: $textFieldManager.userInput)
                 .onAppear {
                     Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
-                        statusText = user.status
+                        textFieldManager.userInput = user.status
                     }
                 }
-                .lineSpacing(20)
+                .keyboardType(.twitter)
+                .onChange(of: textFieldManager.userInput) { value in
+                    self.wordCount = textFieldManager.userInput.count
+                    
+                }
                 .autocapitalization(.sentences)
                 .disableAutocorrection(true)
                 .padding()
                 .navigationBarTitle("Status", displayMode: .inline)
-                .navigationBarItems(trailing: NavigationLink(destination: InnerProfileView()) {
+                .navigationBarItems(trailing:
                     Button(action: {
                         // save data to firebase
                         ProgressHUD.show()
                         let dict: Dictionary<String, Any> = [
-                            "status": statusText
+                            "status": textFieldManager.userInput
                         ]
                         Api.User.saveUserProfile(dict: dict) {
                             print("status update success")
@@ -233,18 +275,71 @@ struct StatusView: View {
                     }) {
                         Text("Done").bold()
                     }
-                }
+                
                 )
-                .onChange(of: statusText) { value in
-                    let words = statusText.split { $0 == " " || $0.isNewline }
-                    self.wordCount = words.count
-                    
-                }
+                .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                
             
-            Text("\(wordCount)")
+            Text("\(wordCount)/150")
                 .foregroundColor(.secondary)
                 .padding(.trailing)
                 .padding(.bottom)
         }
+    }
+}
+
+class TextFieldManager: ObservableObject {
+    
+    let characterLimit = 150
+    
+    @Published var userInput = "" {
+            didSet {
+                if userInput.count > characterLimit {
+                    userInput = String(userInput.prefix(characterLimit))
+                }
+            }
+        }
+    
+}
+
+struct GalleryPhotoView: View {
+    
+    var url: String
+    
+    @State var showActionSheet = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    func deleteImage() {
+        StorageService.deletingImageFromStorage(uid: Api.User.currentUserId, url: url)
+    }
+    
+    var body: some View {
+        KFImage(URL(string: url))
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .navigationBarItems(trailing: Button(action: {
+                
+            }, label: {
+                Button(action: {
+                    showActionSheet.toggle()
+                }) {
+                    Image(systemName: "trash")
+                        .foregroundColor(Color(UIColor.red))
+                        .actionSheet(isPresented: $showActionSheet) {
+                            ActionSheet(
+                                title: Text("Delete Photo?"),
+                                message: Text("You can't undo this action."),
+                                buttons:[
+                                    .destructive(Text("Delete"),
+                                                 action: {
+                                                    deleteImage()
+                                                    self.presentationMode.wrappedValue.dismiss()
+                                                 }),
+                                    .cancel()
+                                ]
+                            )
+                        }
+                }
+            }))
     }
 }

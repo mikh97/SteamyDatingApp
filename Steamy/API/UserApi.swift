@@ -102,6 +102,18 @@ class UserApi: ObservableObject, UserServiceProtocol {
             onSuccess()
         }
     }
+    
+    func getGallery(uid: String, onSuccess: @escaping(_ dict: Dictionary<String, String>) -> Void, onEmpty: @escaping(_ isEmpty: Bool) -> Void) {
+        let ref = Ref().databaseSpecificGallery(uid: uid)
+        ref.observe(.value) { (snapshot) in
+            if let dict = snapshot.value as? Dictionary<String, String> {
+                onSuccess(dict)
+            } else {
+                onEmpty(true)
+            }
+            
+        }
+    }
 }
 
 typealias UserCompletion = (User) -> Void
