@@ -45,7 +45,7 @@ struct InnerProfileView: View {
                         
                         HStack {
                             
-                            Spacer(minLength: 30).frame(width: 40, height:0, alignment: .center)
+                            Spacer(minLength: 30).frame(width: 20, height:0, alignment: .center)
                             Text("Profile").multilineTextAlignment(.leading).foregroundColor(Color.red)
                                 .font(.system(size: 35, weight: .bold))
                             

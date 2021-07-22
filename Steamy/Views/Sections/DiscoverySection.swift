@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavigationSection: View {
+struct DiscoverySection: View {
     var body: some View {
         HStack {
             Spacer(minLength: 30).frame(width: 20, height:0, alignment: .center)
@@ -17,8 +17,8 @@ struct NavigationSection: View {
     }
 }
 
-struct NavigationSection_Previews: PreviewProvider {
+struct DiscoverySection_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationSection()
+        DiscoverySection()
     }
 }

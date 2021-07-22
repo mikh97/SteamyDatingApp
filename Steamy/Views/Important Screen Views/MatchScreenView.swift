@@ -10,7 +10,7 @@ import SwiftUI
 struct MatchScreenView: View {
     var body: some View {
         VStack {
-            NavigationSection()
+            DiscoverySection()
             CardSection()
             OptionSection()
         }
