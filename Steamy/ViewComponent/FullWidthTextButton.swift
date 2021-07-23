@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FullWidthTextButton: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var action: () -> Void
     var text: String
     
@@ -20,13 +22,13 @@ struct FullWidthTextButton: View {
         }, label: {
             Text(text)
                 .font(Font.system(size: 15, weight: .semibold))
-                .foregroundColor(Color(UIColor.white))
+                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                 .frame(maxWidth: .infinity)
                 .padding([.top, .bottom], 10)
                 .cornerRadius(6)
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                        .stroke(Color.gray.opacity(0.75), lineWidth: 1)
                 )
                 .padding([.top, .bottom], 10)
                 .padding()
