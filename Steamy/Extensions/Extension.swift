@@ -25,3 +25,28 @@ extension UIApplication: UIGestureRecognizerDelegate {
         return true // set to `false` if you don't want to detect tap during other gestures
     }
 }
+
+extension String {
+    var hashString: Int {
+        let unicodeScalars = self.unicodeScalars.map { $0.value }
+        return unicodeScalars.reduce(5381) {
+            ($0 << 5) &+ $0 &+ Int($1)
+        }
+    }
+}
+
+extension Date {
+    
+    // *** example usage ***
+    // let date = Date()
+    // date.toString(dateFormat: "yyyyMMdd")
+    // date.toString(dateFormat: "HH:mm a")  --> expected output: 01:06 AM
+    // date.toString(dateFormat: "dd/MM/yyyy")
+    
+    func toString(dateFormat format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+    
+}
