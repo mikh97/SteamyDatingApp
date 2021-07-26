@@ -36,7 +36,7 @@ struct CardImageScroller: View {
                 ZStack {
                     KFImage(URL(string: person.galleryImages?[imageIndex] ?? ""))
                         .placeholder {
-                            Color(UIColor.systemBackground)
+                            ProgressView()
                         }
                         .resizable()
 //                        .scaledToFit()
