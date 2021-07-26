@@ -11,6 +11,7 @@ import FirebaseStorage
 
 let REF_USER = "users"
 let REF_GALLERY = "gallery"
+let REF_ACTION = "action"
 
 let URL_STORAGE_ROOT = "gs://steamydatingapp.appspot.com"
 let STORAGE_PROFILE = "profile"
@@ -37,6 +38,13 @@ class Ref {
         return databaseGallery.child(uid)
     }
     
+    var databaseAction: DatabaseReference {
+        return databaseRoot.child(REF_ACTION)
+    }
+    
+    func databaseActionForUser(uid: String) -> DatabaseReference {
+        return databaseAction.child(uid)
+    }
     
     // Storage Ref
 

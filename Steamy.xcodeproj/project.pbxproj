@@ -11,6 +11,7 @@
 		0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C4ED2192682353100DB60BB /* GoogleService-Info.plist */; };
 		0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346E2688903A00BCDA64 /* UserApi.swift */; };
 		0C4F34712688903A00BCDA64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346F2688903A00BCDA64 /* Api.swift */; };
+		0CA1CDC426AF41B900D94833 /* NewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA1CDC326AF41B900D94833 /* NewMatchView.swift */; };
 		0CBD4A0A26A4C75500E743C1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A0926A4C75500E743C1 /* ImagePicker.swift */; };
 		0CBD4A0C26A4D35D00E743C1 /* FullWidthTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A0B26A4D35D00E743C1 /* FullWidthTextButton.swift */; };
 		0CBD4A0F26A4D69E00E743C1 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A0E26A4D69E00E743C1 /* RoundedImage.swift */; };
@@ -64,6 +65,7 @@
 		0C4ED2192682353100DB60BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C4F346E2688903A00BCDA64 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		0C4F346F2688903A00BCDA64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		0CA1CDC326AF41B900D94833 /* NewMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchView.swift; sourceTree = "<group>"; };
 		0CBD4A0926A4C75500E743C1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0CBD4A0B26A4D35D00E743C1 /* FullWidthTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthTextButton.swift; sourceTree = "<group>"; };
 		0CBD4A0E26A4D69E00E743C1 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				6B586E7B268AED1000993048 /* ForgotPasswordView.swift */,
 				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
 				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
+				0CA1CDC326AF41B900D94833 /* NewMatchView.swift */,
 			);
 			path = "Important Screen Views";
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				0CBD4A0F26A4D69E00E743C1 /* RoundedImage.swift in Sources */,
 				0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */,
 				0CBD4A2E26AB4A2700E743C1 /* Inbox.swift in Sources */,
+				0CA1CDC426AF41B900D94833 /* NewMatchView.swift in Sources */,
 				0C09BE4126A24E14000A2B29 /* Extension.swift in Sources */,
 				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
 				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,

@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @EnvironmentObject var userApi: UserApi
     
+    @State var showNewMatchView = false
+    
 //    @State private var fullscreenMode: Bool = false
     
     var body: some View {
@@ -23,7 +25,7 @@ struct HomeView: View {
 
             Spacer()
             
-            CardStack(people: userApi.cardPeople)
+            CardStack(people: userApi.cardPeople, showNewMatchView: $showNewMatchView)
             
             Spacer()
             
@@ -33,14 +35,22 @@ struct HomeView: View {
                     
                     CircleButtonView(type: .no) {
                         if let person = userApi.cardPeople.last {
-                            userApi.swipe(person, .nope)
+                            userApi.swipe(person: person, direction: .nope) { matchedPerson in
+                                //
+                            }
                         }
                     }
                     
                     CircleButtonView(type: .heart) {
                         if let person = userApi.cardPeople.last {
-                            userApi.swipe(person, .like)
+                            userApi.swipe(person: person, direction: .like) { matchedPerson in
+                                userApi.currentMatchedPersonID = matchedPerson.uid
+                                self.showNewMatchView = true
+                            }
                         }
+                    }
+                    .fullScreenCover(isPresented: $showNewMatchView) {
+                        NewMatchView(showNewMatchView: self.$showNewMatchView, matchedPersonID: userApi.currentMatchedPersonID)
                     }
                     
                     Spacer()

@@ -18,6 +18,7 @@ class UserApi: ObservableObject, UserServiceProtocol {
     
     @Published var signedIn = false
     @Published var cardPeople: [Person] = []
+    @Published var currentMatchedPersonID = ""
     
     init() {
         loadCardPeople()
@@ -147,22 +148,45 @@ class UserApi: ObservableObject, UserServiceProtocol {
         }
     }
     
-    func swipe(_ person: Person, _ direction: SwipeDirection) {
+    func swipe(person: Person, direction: SwipeDirection, onSuccess: @escaping(PersonCompletion)) {
         cardPeople.removeLast()
         print(cardPeople.count)
         print("people removed")
         
         // networking to backend
-    }
-    
-    func superLike(_ person: Person) {
-        cardPeople.removeLast()
-        print(cardPeople.count)
-        print("people removed")
+        if let like = direction == .like ? true : false {
+            
+            Ref().databaseActionForUser(uid: Api.User.currentUserId).updateChildValues([person.uid: like]) { (error, ref) in
+                if error == nil, like == true {
+                    
+                    Ref().databaseActionForUser(uid: person.uid).observeSingleEvent(of: .value) { (snapshot) in
+                        
+                        guard let dict = snapshot.value as? [String: Bool] else { return }
+                        
+                        if dict.keys.contains(Api.User.currentUserId), dict[Api.User.currentUserId] == true {
+                            Ref().databaseRoot.child("newMatch").child(Api.User.currentUserId).updateChildValues([person.uid: true])
+                            
+                            Ref().databaseRoot.child("newMatch").child(person.uid).updateChildValues([Api.User.currentUserId: true])
+                            
+                            onSuccess(person)
+                        }
+                    }
+                }
+            }
+        }
         
-        // networking to backend
     }
     
+    func getUserInfoSingleEvent(uid: String, onSuccess: @escaping(UserCompletion)) {
+        let ref = Ref().databaseSpecificUser(uid: uid)
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? Dictionary<String, Any> {
+                if let user = User.transformUser(dict: dict) {
+                    onSuccess(user)
+                }
+            }
+        }
+    }
     
 }
 
@@ -172,3 +196,4 @@ enum SwipeDirection {
 }
 
 typealias UserCompletion = (User) -> Void
+typealias PersonCompletion = (Person) -> Void

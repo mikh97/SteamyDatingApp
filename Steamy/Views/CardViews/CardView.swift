@@ -15,6 +15,8 @@ struct CardView: View {
     
     @EnvironmentObject var userApi: UserApi
     
+    @Binding var showNewMatchView: Bool
+    
     let screenCutoff = (UIScreen.main.bounds.width / 2) * 0.8
     
     @Namespace var imageNamespace
@@ -22,7 +24,7 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geo in
             if fullscreenMode {
-                FullScreenCardView(person: person, fullscreenMode: $fullscreenMode, nameSpace: imageNamespace)
+                FullScreenCardView(person: person, fullscreenMode: $fullscreenMode, showNewMatchView: $showNewMatchView, nameSpace: imageNamespace)
 //                    .animation(.easeOut(duration: 0.2))
             } else {
                 CardImageScroller(person: person, fullscreenMode: $fullscreenMode)
@@ -63,13 +65,18 @@ struct CardView: View {
                                         // swipe right
                                         person.x = 500
                                         person.degree = 12
-                                        userApi.swipe(person, .nope)
+                                        userApi.swipe(person: person, direction: .nope) { matchedPerson in
+                                            //
+                                        }
 
                                     } else if width < -screenCutoff {
                                         // swipe left
                                         person.x = -500
                                         person.degree = -12
-                                        userApi.swipe(person, .like)
+                                        userApi.swipe(person: person, direction: .like) { matchedPerson in
+                                            userApi.currentMatchedPersonID = matchedPerson.uid
+                                            self.showNewMatchView = true
+                                        }
                                     }
                                 }
                             })
@@ -81,6 +88,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(person: Person.example, fullscreenMode: .constant(false))
+        CardView(person: Person.example, fullscreenMode: .constant(false), showNewMatchView: .constant(false))
     }
 }

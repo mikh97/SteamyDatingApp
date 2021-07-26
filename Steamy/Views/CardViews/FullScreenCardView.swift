@@ -13,6 +13,7 @@ struct FullScreenCardView: View {
     @ObservedObject var person: Person
     
     @Binding var fullscreenMode: Bool
+    @Binding var showNewMatchView: Bool
     
     let screen = UIScreen.main.bounds
     
@@ -89,13 +90,19 @@ struct FullScreenCardView: View {
                 
                 CircleButtonView(type: .no, action: {
                     fullscreenMode = false
-                    userApi.swipe(person, .nope)
+                    userApi.swipe(person: person, direction: .nope) { matchedPerson in
+                        //
+                    }
                 })
                     .frame(height: 50)
                 
                 CircleButtonView(type: .heart, action: {
                     fullscreenMode = false
-                    userApi.swipe(person, .like)
+                    userApi.swipe(person: person, direction: .like) { matchedPerson in
+                        userApi.currentMatchedPersonID = matchedPerson.uid
+                        showNewMatchView = true
+                    }
+                    
                 })
                     .frame(height: 50)
                 
@@ -119,6 +126,6 @@ struct FullScreenCardView: View {
 struct FullScreenCardView_Previews: PreviewProvider {
     @Namespace static var placeholder
     static var previews: some View {
-        FullScreenCardView(person: Person.example, fullscreenMode: .constant(true), nameSpace: placeholder)
+        FullScreenCardView(person: Person.example, fullscreenMode: .constant(true), showNewMatchView: .constant(false), nameSpace: placeholder)
     }
 }

@@ -12,13 +12,14 @@ struct CardStack: View {
     var people: [Person]
     
     @State private var fullscreenMode: Bool = false
+    @Binding var showNewMatchView: Bool
     
     let screen = UIScreen.main.bounds
     
     var body: some View {
         ZStack {
             ForEach(people, id: \.uid) { person in
-                CardView(person: person, fullscreenMode: $fullscreenMode)
+                CardView(person: person, fullscreenMode: $fullscreenMode, showNewMatchView: $showNewMatchView)
                 
             }
         }
@@ -28,6 +29,6 @@ struct CardStack: View {
 
 struct CardStack_Previews: PreviewProvider {
     static var previews: some View {
-        CardStack(people: Person.examples)
+        CardStack(people: Person.examples, showNewMatchView: .constant(false))
     }
 }
