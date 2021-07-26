@@ -17,6 +17,11 @@ protocol UserServiceProtocol {
 class UserApi: ObservableObject, UserServiceProtocol {
     
     @Published var signedIn = false
+    @Published var cardPeople: [Person] = []
+    
+    init() {
+        loadCardPeople()
+    }
     
     var isSignedIn: Bool {
         return Auth.auth().currentUser != nil
@@ -114,6 +119,56 @@ class UserApi: ObservableObject, UserServiceProtocol {
             
         }
     }
+    
+    func loadCardPeople() {
+        Ref().databaseUsers.observe(.value) { snapshot in
+            self.cardPeople = []
+            for user in snapshot.children.allObjects as! [DataSnapshot] {
+                if let dict = user.value as? Dictionary<String, Any> {
+                    if let person = Person.transformPerson(dict: dict) {
+                        if person.uid != Api.User.currentUserId  && person.profileImageUrl != "" {
+                            
+                            self.cardPeople.append(person)
+                            self.getGallery(uid: person.uid) { galleryDict in
+                                person.setGalleryImages(value: Array(galleryDict.values))
+                                print(person.uid, person.galleryImages)
+                                
+                            } onEmpty: { isEmpty in
+                                if isEmpty {
+                                    person.setGalleryImages(value: [person.profileImageUrl])
+                                }
+                            }
+//                            print(person.uid, person.galleryImages)
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func swipe(_ person: Person, _ direction: SwipeDirection) {
+        cardPeople.removeLast()
+        print(cardPeople.count)
+        print("people removed")
+        
+        // networking to backend
+    }
+    
+    func superLike(_ person: Person) {
+        cardPeople.removeLast()
+        print(cardPeople.count)
+        print("people removed")
+        
+        // networking to backend
+    }
+    
+    
+}
+
+enum SwipeDirection {
+    case like
+    case nope
 }
 
 typealias UserCompletion = (User) -> Void

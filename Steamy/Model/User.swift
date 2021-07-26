@@ -73,4 +73,11 @@ extension User: Equatable {
 
 extension User {
     static let example = User(uid: "qweqweqweqweq", firstName: "FName", lastName: "LName", email: "haha@haha.com", profileImageUrl: "https://picsum.photos/500", status: "my status")
+    
+    static let exampleGallery = [
+        "https://picsum.photos/400/300",
+        "https://picsum.photos/400/301",
+        "https://picsum.photos/400/302",
+        "https://picsum.photos/400/303"
+    ]
 }

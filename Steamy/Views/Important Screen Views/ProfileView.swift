@@ -25,7 +25,7 @@ struct ProfileView: View {
                 }
                 .tag(1)
             
-            MatchScreenView()
+            HomeView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Discover")
