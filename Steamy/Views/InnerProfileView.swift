@@ -200,7 +200,7 @@ struct InnerProfileView: View {
                 Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
                     firstName = user.firstName
                     lastName = user.lastName
-                    profileImageUrl = user.profileImageUrl == "" ? "https://picsum.photos/400" : user.profileImageUrl
+                    profileImageUrl = user.profileImageUrl 
                     status = user.status
                 }
                 Api.User.getGallery(uid: Api.User.currentUserId) { dict in
