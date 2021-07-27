@@ -18,6 +18,10 @@ class Message {
     var width: Double
     var videoUrl: String
     
+    var fromCurrentUser: Bool {
+        return from == Api.User.currentUserId
+    }
+    
     init(id: String, from: String, to: String, date: Double, text: String, imageUrl: String, height: Double, width: Double, videoUrl: String) {
         self.id = id
         self.from = from
@@ -58,5 +62,6 @@ class Message {
 
 
 extension Message {
-    static let example = Message(id: "channelID", from: "fromUserID", to: "toUserID", date: 1627066462.9037929, text: "example text", imageUrl: "", height: 0, width: 0, videoUrl: "")
+    static let exampleSent = Message(id: "channelID", from: "", to: "toUserID", date: 1627066462.9037929, text: "example text", imageUrl: "", height: 0, width: 0, videoUrl: "")
+    static let exampleReceived = Message(id: "channelID", from: "fromUserID", to: "", date: 1627066462.9037929, text: "example text", imageUrl: "", height: 0, width: 0, videoUrl: "")
 }

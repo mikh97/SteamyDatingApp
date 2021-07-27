@@ -32,10 +32,10 @@ struct MainTabView: View {
                 }
                 .tag(2)
             
-            MessagingView()
+            MessageListView()
                 .tabItem {
                     Image(systemName: "bubble.left")
-                    Text("Messaging")
+                    Text("Messages")
                 }
                 .tag(3)
         }

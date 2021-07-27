@@ -12,6 +12,7 @@
 		0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346E2688903A00BCDA64 /* UserApi.swift */; };
 		0C4F34712688903A00BCDA64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346F2688903A00BCDA64 /* Api.swift */; };
 		0CA1CDC426AF41B900D94833 /* NewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA1CDC326AF41B900D94833 /* NewMatchView.swift */; };
+		0CB2FE4526B0C0970047E814 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB2FE4426B0C0970047E814 /* MessageView.swift */; };
 		0CBD4A0A26A4C75500E743C1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A0926A4C75500E743C1 /* ImagePicker.swift */; };
 		0CBD4A0C26A4D35D00E743C1 /* FullWidthTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A0B26A4D35D00E743C1 /* FullWidthTextButton.swift */; };
 		0CBD4A0F26A4D69E00E743C1 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A0E26A4D69E00E743C1 /* RoundedImage.swift */; };
@@ -33,7 +34,7 @@
 		6005492C269BA94900B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9F3519E2577FA54F2FF09E /* Pods_Steamy.framework */; };
 		6005497B269BAC8900B7D519 /* SteamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005497A269BAC8900B7D519 /* SteamyTests.swift */; };
 		6B334D912692CBE400CDA852 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* ProfileView.swift */; };
-		6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessagingView.swift */; };
+		6B334D972692D67F00CDA852 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessageListView.swift */; };
 		6B334D9D2692E60600CDA852 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D9C2692E60600CDA852 /* EditProfileView.swift */; };
 		6B586E7C268AED1000993048 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B586E7B268AED1000993048 /* ForgotPasswordView.swift */; };
 		6B8399CA267D8F5E00F77B41 /* AuthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* AuthSelectionView.swift */; };
@@ -64,6 +65,7 @@
 		0C4F346E2688903A00BCDA64 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		0C4F346F2688903A00BCDA64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0CA1CDC326AF41B900D94833 /* NewMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchView.swift; sourceTree = "<group>"; };
+		0CB2FE4426B0C0970047E814 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		0CBD4A0926A4C75500E743C1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0CBD4A0B26A4D35D00E743C1 /* FullWidthTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthTextButton.swift; sourceTree = "<group>"; };
 		0CBD4A0E26A4D69E00E743C1 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		6005497A269BAC8900B7D519 /* SteamyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyTests.swift; sourceTree = "<group>"; };
 		6005497C269BAC8900B7D519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B334D902692CBE400CDA852 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		6B334D962692D67F00CDA852 /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
+		6B334D962692D67F00CDA852 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		6B334D9C2692E60600CDA852 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		6B586E7B268AED1000993048 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		6B8399C9267D8F5E00F77B41 /* AuthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectionView.swift; sourceTree = "<group>"; };
@@ -164,12 +166,13 @@
 			path = DiscoverViews;
 			sourceTree = "<group>";
 		};
-		0CA1CDC826AFED3800D94833 /* MessagingViews */ = {
+		0CA1CDC826AFED3800D94833 /* MessagesViews */ = {
 			isa = PBXGroup;
 			children = (
-				6B334D962692D67F00CDA852 /* MessagingView.swift */,
+				6B334D962692D67F00CDA852 /* MessageListView.swift */,
+				0CB2FE4426B0C0970047E814 /* MessageView.swift */,
 			);
-			path = MessagingViews;
+			path = MessagesViews;
 			sourceTree = "<group>";
 		};
 		0CBD4A0D26A4D5BB00E743C1 /* ViewComponent */ = {
@@ -284,7 +287,7 @@
 				0CA1CDC526AFEACE00D94833 /* AuthViews */,
 				0CA1CDC726AFEB4600D94833 /* DiscoverViews */,
 				0CA1CDC626AFEB1D00D94833 /* ProfileViews */,
-				0CA1CDC826AFED3800D94833 /* MessagingViews */,
+				0CA1CDC826AFED3800D94833 /* MessagesViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,12 +497,13 @@
 				0CBD4A1726A4F4FA00E743C1 /* Ref.swift in Sources */,
 				6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */,
 				0CBD4A3026AB5F1100E743C1 /* CardStack.swift in Sources */,
-				6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */,
+				6B334D972692D67F00CDA852 /* MessageListView.swift in Sources */,
 				0CBD4A2626A8D4CA00E743C1 /* CircleButtonView.swift in Sources */,
 				0CBD4A1D26A789A800E743C1 /* ImagePickerWithEditing.swift in Sources */,
 				0CBD4A1F26A8BB5400E743C1 /* CardImageScroller.swift in Sources */,
 				0CBD4A0A26A4C75500E743C1 /* ImagePicker.swift in Sources */,
 				0CBD4A2826A98CDF00E743C1 /* Person.swift in Sources */,
+				0CB2FE4526B0C0970047E814 /* MessageView.swift in Sources */,
 				0CBD4A0C26A4D35D00E743C1 /* FullWidthTextButton.swift in Sources */,
 				0CBD4A1426A4F3AE00E743C1 /* StorageService.swift in Sources */,
 				0CBD4A0F26A4D69E00E743C1 /* RoundedImage.swift in Sources */,
