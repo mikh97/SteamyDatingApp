@@ -150,7 +150,6 @@
 			children = (
 				6B334D902692CBE400CDA852 /* ProfileView.swift */,
 				6B334D9C2692E60600CDA852 /* EditProfileView.swift */,
-				0CBD4A2026A8BBC400E743C1 /* CardViews */,
 			);
 			path = ProfileViews;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 			children = (
 				0CBD4A3126AB624600E743C1 /* DiscoverView.swift */,
 				0CA1CDC326AF41B900D94833 /* NewMatchView.swift */,
+				0CBD4A2026A8BBC400E743C1 /* CardViews */,
 			);
 			path = DiscoverViews;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Steamy/Preview Content\"";
-				DEVELOPMENT_TEAM = 93Y3PSZG8S;
+				DEVELOPMENT_TEAM = D48583YGQR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Steamy/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -711,7 +711,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Steamy.SteamyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheejunwong.SteamyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
