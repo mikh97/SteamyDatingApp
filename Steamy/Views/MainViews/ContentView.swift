@@ -14,11 +14,11 @@ struct ContentView: View {
     var body: some View {
         Group {
             if user.signedIn {
-                ProfileView()
+                MainTabView()
                 
                 
             } else {
-                Sign_OR_Log_UIView()
+                AuthSelectionView()
             }
         }
         .onAppear {

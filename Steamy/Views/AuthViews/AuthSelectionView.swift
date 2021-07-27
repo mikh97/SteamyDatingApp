@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Sign_OR_Log_UIView: View {
+struct AuthSelectionView: View {
     var body: some View {
         NavigationView{
             ZStack {
@@ -61,8 +61,8 @@ struct Sign_OR_Log_UIView: View {
     }
 }
 
-struct Sign_OR_Log_UIView_Previews: PreviewProvider {
+struct AuthSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        Sign_OR_Log_UIView()
+        AuthSelectionView()
     }
 }

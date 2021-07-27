@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  DiscoverView.swift
 //  Steamy
 //
 //  Created by Chee Jun Wong on 7/24/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct DiscoverView: View {
     
     @EnvironmentObject var userApi: UserApi
     
@@ -66,9 +66,9 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        DiscoverView()
             .environmentObject(UserApi())
     }
 }

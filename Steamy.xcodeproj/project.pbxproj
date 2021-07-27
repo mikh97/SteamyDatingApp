@@ -28,17 +28,15 @@
 		0CBD4A2C26AB488A00E743C1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A2B26AB488A00E743C1 /* Message.swift */; };
 		0CBD4A2E26AB4A2700E743C1 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A2D26AB4A2700E743C1 /* Inbox.swift */; };
 		0CBD4A3026AB5F1100E743C1 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A2F26AB5F1100E743C1 /* CardStack.swift */; };
-		0CBD4A3226AB624600E743C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A3126AB624600E743C1 /* HomeView.swift */; };
+		0CBD4A3226AB624600E743C1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A3126AB624600E743C1 /* DiscoverView.swift */; };
 		60054928269BA94300B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46434B557561559E335A4DFB /* Pods_Steamy.framework */; };
 		6005492C269BA94900B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9F3519E2577FA54F2FF09E /* Pods_Steamy.framework */; };
 		6005497B269BAC8900B7D519 /* SteamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005497A269BAC8900B7D519 /* SteamyTests.swift */; };
-		602976AD268C83C500C9B0FA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602976AC268C83C500C9B0FA /* Validation.swift */; };
-		6B334D912692CBE400CDA852 /* InnerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* InnerProfileView.swift */; };
+		6B334D912692CBE400CDA852 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* ProfileView.swift */; };
 		6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessagingView.swift */; };
 		6B334D9D2692E60600CDA852 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D9C2692E60600CDA852 /* EditProfileView.swift */; };
-		6B334DA22692F72D00CDA852 /* AddProfileImagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334DA12692F72D00CDA852 /* AddProfileImagePopupView.swift */; };
 		6B586E7C268AED1000993048 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B586E7B268AED1000993048 /* ForgotPasswordView.swift */; };
-		6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */; };
+		6B8399CA267D8F5E00F77B41 /* AuthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8399C9267D8F5E00F77B41 /* AuthSelectionView.swift */; };
 		6BD9B77C26868B7C00D8726E /* App_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD9B77B26868B7B00D8726E /* App_logo.png */; };
 		6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D73267A3328000CAD5E /* SteamyApp.swift */; };
 		6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE65D75267A3328000CAD5E /* ContentView.swift */; };
@@ -46,7 +44,7 @@
 		6BE65D7B267A332A000CAD5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE65D7A267A332A000CAD5E /* Preview Assets.xcassets */; };
 		6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF62680201C00C1A094 /* SignUpView.swift */; };
 		6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6CFF82680DC7B00C1A094 /* LoginView.swift */; };
-		6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFE093F26865E3B008261D4 /* ProfileView.swift */; };
+		6BFE094026865E3B008261D4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFE093F26865E3B008261D4 /* MainTabView.swift */; };
 		6BFE096926866AE1008261D4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFE096826866AE1008261D4 /* Account.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +79,7 @@
 		0CBD4A2B26AB488A00E743C1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0CBD4A2D26AB4A2700E743C1 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		0CBD4A2F26AB5F1100E743C1 /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
-		0CBD4A3126AB624600E743C1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0CBD4A3126AB624600E743C1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		3EF32FB3739168214BC42CC5 /* Pods-Steamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.release.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.release.xcconfig"; sourceTree = "<group>"; };
 		46434B557561559E335A4DFB /* Pods_Steamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95917974171FE22AC22E0C /* Pods-Steamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.debug.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,13 +87,11 @@
 		60054978269BAC8900B7D519 /* SteamyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteamyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6005497A269BAC8900B7D519 /* SteamyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyTests.swift; sourceTree = "<group>"; };
 		6005497C269BAC8900B7D519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		602976AC268C83C500C9B0FA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		6B334D902692CBE400CDA852 /* InnerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerProfileView.swift; sourceTree = "<group>"; };
+		6B334D902692CBE400CDA852 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6B334D962692D67F00CDA852 /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
 		6B334D9C2692E60600CDA852 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
-		6B334DA12692F72D00CDA852 /* AddProfileImagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileImagePopupView.swift; sourceTree = "<group>"; };
 		6B586E7B268AED1000993048 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
-		6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_OR_Log_UIView.swift; sourceTree = "<group>"; };
+		6B8399C9267D8F5E00F77B41 /* AuthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectionView.swift; sourceTree = "<group>"; };
 		6BD9B77B26868B7B00D8726E /* App_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_logo.png; sourceTree = "<group>"; };
 		6BE65D70267A3328000CAD5E /* Steamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE65D73267A3328000CAD5E /* SteamyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyApp.swift; sourceTree = "<group>"; };
@@ -105,7 +101,7 @@
 		6BE65D7C267A332A000CAD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE6CFF62680201C00C1A094 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6BE6CFF82680DC7B00C1A094 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		6BFE093F26865E3B008261D4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		6BFE093F26865E3B008261D4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6BFE096826866AE1008261D4 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +132,44 @@
 				0C09BE4026A24E14000A2B29 /* Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0CA1CDC526AFEACE00D94833 /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B8399C9267D8F5E00F77B41 /* AuthSelectionView.swift */,
+				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
+				6B586E7B268AED1000993048 /* ForgotPasswordView.swift */,
+				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
+		0CA1CDC626AFEB1D00D94833 /* ProfileViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B334D902692CBE400CDA852 /* ProfileView.swift */,
+				6B334D9C2692E60600CDA852 /* EditProfileView.swift */,
+				0CBD4A2026A8BBC400E743C1 /* CardViews */,
+			);
+			path = ProfileViews;
+			sourceTree = "<group>";
+		};
+		0CA1CDC726AFEB4600D94833 /* DiscoverViews */ = {
+			isa = PBXGroup;
+			children = (
+				0CBD4A3126AB624600E743C1 /* DiscoverView.swift */,
+				0CA1CDC326AF41B900D94833 /* NewMatchView.swift */,
+			);
+			path = DiscoverViews;
+			sourceTree = "<group>";
+		};
+		0CA1CDC826AFED3800D94833 /* MessagingViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B334D962692D67F00CDA852 /* MessagingView.swift */,
+			);
+			path = MessagingViews;
 			sourceTree = "<group>";
 		};
 		0CBD4A0D26A4D5BB00E743C1 /* ViewComponent */ = {
@@ -189,20 +223,13 @@
 			path = SteamyTests;
 			sourceTree = "<group>";
 		};
-		6B334D9E2692EB4A00CDA852 /* Important Screen Views */ = {
+		6B334D9E2692EB4A00CDA852 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
-				0CBD4A3126AB624600E743C1 /* HomeView.swift */,
-				6B334D962692D67F00CDA852 /* MessagingView.swift */,
 				6BE65D75267A3328000CAD5E /* ContentView.swift */,
-				6B8399C9267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift */,
-				6BE6CFF62680201C00C1A094 /* SignUpView.swift */,
-				6B586E7B268AED1000993048 /* ForgotPasswordView.swift */,
-				6BFE093F26865E3B008261D4 /* ProfileView.swift */,
-				6BE6CFF82680DC7B00C1A094 /* LoginView.swift */,
-				0CA1CDC326AF41B900D94833 /* NewMatchView.swift */,
+				6BFE093F26865E3B008261D4 /* MainTabView.swift */,
 			);
-			path = "Important Screen Views";
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 		6BE65D67267A3328000CAD5E = {
@@ -253,12 +280,11 @@
 		6BFE0966268667F5008261D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6B334D9E2692EB4A00CDA852 /* Important Screen Views */,
-				602976AC268C83C500C9B0FA /* Validation.swift */,
-				6B334D902692CBE400CDA852 /* InnerProfileView.swift */,
-				6B334D9C2692E60600CDA852 /* EditProfileView.swift */,
-				6B334DA12692F72D00CDA852 /* AddProfileImagePopupView.swift */,
-				0CBD4A2026A8BBC400E743C1 /* CardViews */,
+				6B334D9E2692EB4A00CDA852 /* MainViews */,
+				0CA1CDC526AFEACE00D94833 /* AuthViews */,
+				0CA1CDC726AFEB4600D94833 /* DiscoverViews */,
+				0CA1CDC626AFEB1D00D94833 /* ProfileViews */,
+				0CA1CDC826AFED3800D94833 /* MessagingViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,11 +493,9 @@
 				0C4F34712688903A00BCDA64 /* Api.swift in Sources */,
 				0CBD4A1726A4F4FA00E743C1 /* Ref.swift in Sources */,
 				6BE6CFF72680201C00C1A094 /* SignUpView.swift in Sources */,
-				602976AD268C83C500C9B0FA /* Validation.swift in Sources */,
 				0CBD4A3026AB5F1100E743C1 /* CardStack.swift in Sources */,
 				6B334D972692D67F00CDA852 /* MessagingView.swift in Sources */,
 				0CBD4A2626A8D4CA00E743C1 /* CircleButtonView.swift in Sources */,
-				6B334DA22692F72D00CDA852 /* AddProfileImagePopupView.swift in Sources */,
 				0CBD4A1D26A789A800E743C1 /* ImagePickerWithEditing.swift in Sources */,
 				0CBD4A1F26A8BB5400E743C1 /* CardImageScroller.swift in Sources */,
 				0CBD4A0A26A4C75500E743C1 /* ImagePicker.swift in Sources */,
@@ -484,17 +508,17 @@
 				0CA1CDC426AF41B900D94833 /* NewMatchView.swift in Sources */,
 				0C09BE4126A24E14000A2B29 /* Extension.swift in Sources */,
 				6BE65D76267A3328000CAD5E /* ContentView.swift in Sources */,
-				6B8399CA267D8F5E00F77B41 /* Sign_OR_Log_UIView.swift in Sources */,
+				6B8399CA267D8F5E00F77B41 /* AuthSelectionView.swift in Sources */,
 				6BE6CFF92680DC7B00C1A094 /* LoginView.swift in Sources */,
-				6BFE094026865E3B008261D4 /* ProfileView.swift in Sources */,
+				6BFE094026865E3B008261D4 /* MainTabView.swift in Sources */,
 				6BE65D74267A3328000CAD5E /* SteamyApp.swift in Sources */,
 				0CBD4A2426A8CEDD00E743C1 /* FullScreenCardView.swift in Sources */,
 				0CBD4A1926A5F9DD00E743C1 /* User.swift in Sources */,
 				6B586E7C268AED1000993048 /* ForgotPasswordView.swift in Sources */,
 				0CBD4A2C26AB488A00E743C1 /* Message.swift in Sources */,
-				6B334D912692CBE400CDA852 /* InnerProfileView.swift in Sources */,
+				6B334D912692CBE400CDA852 /* ProfileView.swift in Sources */,
 				6BFE096926866AE1008261D4 /* Account.swift in Sources */,
-				0CBD4A3226AB624600E743C1 /* HomeView.swift in Sources */,
+				0CBD4A3226AB624600E743C1 /* DiscoverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

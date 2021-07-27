@@ -1,5 +1,5 @@
 //
-//  MatchView.swift
+//  ProfileView.swift
 //  Steamy
 //
 //  Created by Neeval Kumar on 7/4/21.
@@ -13,7 +13,7 @@ import KingfisherSwiftUI
 
 // What's with the persistent back button on the top left corner??
 
-struct InnerProfileView: View {
+struct ProfileView: View {
     
     @EnvironmentObject var user: UserApi
     @State var showSheetView = false
@@ -221,9 +221,9 @@ struct InnerProfileView: View {
     }
 }
 
-struct MatchView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        InnerProfileView()
+        ProfileView()
     }
 }
 

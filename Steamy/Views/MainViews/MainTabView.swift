@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  MainTabView.swift
 //  Steamy
 //
 //  Created by Neeval Kumar on 6/25/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ProfileView: View {
+struct MainTabView: View {
     
     @State var email = ""
     @State var password = ""
@@ -18,14 +18,14 @@ struct ProfileView: View {
         
         TabView(selection: $selection) {
             
-            InnerProfileView()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
                 }
                 .tag(1)
             
-            HomeView()
+            DiscoverView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Discover")
@@ -43,7 +43,7 @@ struct ProfileView: View {
 }
 
 
-struct ProfileView_Previews: PreviewProvider {
+struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
