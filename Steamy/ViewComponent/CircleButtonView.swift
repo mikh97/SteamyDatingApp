@@ -13,10 +13,13 @@ enum ButtonType: String {
 }
 
 struct CircleButton: ButtonStyle {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .background(Circle()
-                            .foregroundColor(Color.white)
+                            .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
             )
             .scaleEffect(configuration.isPressed ? 0.7 : 1.0)
     }
