@@ -41,7 +41,7 @@ struct ProfileView: View {
                     
                     VStack{
                         
-                        Spacer()
+//                        Spacer()
                         
                         HStack {
                             
