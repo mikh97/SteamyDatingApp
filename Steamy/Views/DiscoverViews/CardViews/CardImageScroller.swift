@@ -16,6 +16,8 @@ struct CardImageScroller: View {
     
     @Binding var fullscreenMode: Bool
     
+    @Environment(\.colorScheme) var colorScheme
+    
     func updateImageIndex(addition: Bool) {
         let newIndex: Int
         
@@ -36,7 +38,11 @@ struct CardImageScroller: View {
                 ZStack {
                     KFImage(URL(string: person.galleryImages?[imageIndex] ?? ""))
                         .placeholder {
-                            ProgressView()
+                            ZStack {
+                                colorScheme == .dark ? Color.black : Color.white
+                                ProgressView()
+                            }
+                            
                         }
                         .resizable()
 //                        .scaledToFit()
