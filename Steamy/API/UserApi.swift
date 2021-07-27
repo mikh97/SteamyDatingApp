@@ -121,26 +121,44 @@ class UserApi: ObservableObject, UserServiceProtocol {
         }
     }
     
+    private func getNewMatch(uid: String, onSuccess: @escaping(_ dataArray: [String]) -> Void){
+        var tempArray: [String] = []
+        Ref().databaseRoot.child("newMatch").child(uid).observeSingleEvent(of: .value) { snapshot in
+            for user in snapshot.children.allObjects as! [DataSnapshot] {
+                tempArray.append(user.key)
+            }
+            onSuccess(tempArray)
+        }
+    }
+    
+    
     func loadCardPeople() {
         Ref().databaseUsers.observe(.value) { snapshot in
             self.cardPeople = []
-            for user in snapshot.children.allObjects as! [DataSnapshot] {
-                if let dict = user.value as? Dictionary<String, Any> {
-                    if let person = Person.transformPerson(dict: dict) {
-                        if person.uid != Api.User.currentUserId  && person.profileImageUrl != "" {
+            
+            self.getNewMatch(uid: Api.User.currentUserId) { matchedUserIDArray in
+                
+                for user in snapshot.children.allObjects as! [DataSnapshot] {
+                    if let dict = user.value as? Dictionary<String, Any> {
+                        
+                        if let person = Person.transformPerson(dict: dict) {
                             
-                            self.cardPeople.append(person)
-                            self.getGallery(uid: person.uid) { galleryDict in
-                                person.setGalleryImages(value: Array(galleryDict.values))
-                                print(person.uid, person.galleryImages)
+                            if person.uid != Api.User.currentUserId  && person.profileImageUrl != "" {
                                 
-                            } onEmpty: { isEmpty in
-                                if isEmpty {
-                                    person.setGalleryImages(value: [person.profileImageUrl])
+                                if !matchedUserIDArray.contains(person.uid) {
+                                    
+                                    self.cardPeople.append(person)
+                                    self.getGallery(uid: person.uid) { galleryDict in
+                                        person.setGalleryImages(value: Array(galleryDict.values))
+                                        
+                                    } onEmpty: { isEmpty in
+                                        if isEmpty {
+                                            person.setGalleryImages(value: [person.profileImageUrl])
+                                        }
+                                    }
+                                    
                                 }
                             }
-//                            print(person.uid, person.galleryImages)
-                            
                         }
                     }
                 }
