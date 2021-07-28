@@ -12,6 +12,8 @@ import FirebaseStorage
 let REF_USER = "users"
 let REF_GALLERY = "gallery"
 let REF_ACTION = "action"
+let REF_MESSAGE_PREVIEW = "messagePreview"
+let REF_MESSAGE = "messages"
 
 let URL_STORAGE_ROOT = "gs://steamydatingapp.appspot.com"
 let STORAGE_PROFILE = "profile"
@@ -45,6 +47,27 @@ class Ref {
     func databaseActionForUser(uid: String) -> DatabaseReference {
         return databaseAction.child(uid)
     }
+    
+    var databaseMessage: DatabaseReference {
+        return databaseRoot.child(REF_MESSAGE)
+    }
+    
+    func databaseMessageSendTo(from: String, to: String) -> DatabaseReference {
+        return databaseMessage.child(from).child(to)
+    }
+    
+    var databaseMessagePreview: DatabaseReference {
+        return databaseRoot.child(REF_MESSAGE_PREVIEW)
+    }
+    
+    func databaseMessagePreviewInfo(from: String, to: String) -> DatabaseReference {
+        return databaseMessagePreview.child(from).child(to)
+    }
+    
+    func databaseMessagePreviewForUser(uid: String) -> DatabaseReference {
+        return databaseMessagePreview.child(uid)
+    }
+    
     
     // Storage Ref
 

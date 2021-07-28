@@ -70,6 +70,7 @@ class Person: ObservableObject {
 
 extension Person {
     static let example = Person(uid: "qweqweqweqweq", firstName: "FName", lastName: "LName", email: "haha@haha.com", profileImageUrl: "https://picsum.photos/500", status: "my status")
+    static let example2 = Person(uid: "qweqweqweqweqsasdasd", firstName: "FName1", lastName: "LName1", email: "haha1@haha.com", profileImageUrl: "https://picsum.photos/501", status: "my status1")
     
     
     static let examples = [

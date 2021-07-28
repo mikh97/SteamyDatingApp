@@ -50,3 +50,17 @@ extension Date {
     }
     
 }
+
+extension View {
+    func endEditing(_ force: Bool) {
+        UIApplication.shared.windows.forEach{ $0.endEditing(force) }
+    }
+}
+
+struct HideNavigationView: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .navigationTitle("")
+            .navigationBarHidden(true)
+    }
+}
