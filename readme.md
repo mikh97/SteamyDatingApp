@@ -1,4 +1,9 @@
-![Steamy Logo](/Steamy/Resources/App_logo.png)
+<h1 align="center">
+<img
+		width="250"
+		alt="Steamy Dating App"
+		src="https://github.com/mikh97/SteamyDatingApp/blob/main/Steamy/Resources/App_logo.png">
+</h1>
 
 # Steamy IOS Dating App 
 
@@ -43,11 +48,11 @@ This should be the screenshot of the messages
 This is the messaging section where you can contact all of your matches. Send them a greetings!
 
 
-### Download
+## Download
 
 You can [download](https://github.com/mikh97/SteamyDatingApp/archive/refs/heads/main.zip) the latest installable version of Steamy for mobile IOS only. 
 
-### Contributors
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
