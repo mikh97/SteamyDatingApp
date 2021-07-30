@@ -9,7 +9,7 @@
 
 This is an IOS mobile application which uses Firebase dependencies. Since we are not planning to publish it in the App store, in order to run this app you have to install cocoapods and the firebase dependencies on to the project folder prior into running this app. 
 
-## How to Use Steamy
+## Screenshots
 
 <img
 		width="210"
