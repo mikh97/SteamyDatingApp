@@ -197,6 +197,20 @@ class UserApi: ObservableObject, UserServiceProtocol {
                             
                             Ref().databaseRoot.child("newMatch").child(person.uid).updateChildValues([Api.User.currentUserId: true])
                             
+                            let channelId = Message.hash(forMembers: [Api.User.currentUserId, person.uid])
+                            let date: Double = Date().timeIntervalSince1970
+                            let tempDict = [
+                                "from" : Api.User.currentUserId,
+                                "to": person.uid,
+                                "date": date,
+                                "read": true,
+                                "text": "New Match"
+                            ] as [String : Any]
+                            let refFromMessagePreview = Database.database().reference().child(REF_MESSAGE_PREVIEW).child(Api.User.currentUserId).child(channelId)
+                            refFromMessagePreview.updateChildValues(tempDict)
+                            let refToMessagePreview = Database.database().reference().child(REF_MESSAGE_PREVIEW).child(person.uid).child(channelId)
+                            refToMessagePreview.updateChildValues(tempDict)
+                            
                             onSuccess(person)
                         }
                     }
