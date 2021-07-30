@@ -21,7 +21,9 @@ class UserApi: ObservableObject, UserServiceProtocol {
     @Published var currentMatchedPersonID = ""
     
     init() {
-        loadCardPeople()
+        if currentUserId != "" {
+            loadCardPeople()
+        }
     }
     
     var isSignedIn: Bool {

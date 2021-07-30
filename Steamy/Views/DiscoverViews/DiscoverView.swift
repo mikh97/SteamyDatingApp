@@ -25,7 +25,9 @@ struct DiscoverView: View {
 
             Spacer()
             
-            CardStack(people: userApi.cardPeople, showNewMatchView: $showNewMatchView)
+            if !userApi.cardPeople.isEmpty {
+                CardStack(people: userApi.cardPeople, showNewMatchView: $showNewMatchView)
+            
             
             Spacer()
             
@@ -60,6 +62,9 @@ struct DiscoverView: View {
                 .padding(.horizontal)
                 .padding(.vertical, 25)
 //            }
+            } else {
+                ProgressView()
+            }
             
             Spacer()
         }

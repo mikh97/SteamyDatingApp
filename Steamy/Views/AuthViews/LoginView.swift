@@ -30,6 +30,7 @@ struct LoginView: View {
         ProgressHUD.show()
         user.signIn(email: email, password: password) {
             ProgressHUD.dismiss()
+            user.loadCardPeople()
 //            authentication = true
             onSuccess()
         } onError: { errorMessage in
