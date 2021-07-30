@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C09BE4126A24E14000A2B29 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C09BE4026A24E14000A2B29 /* Extension.swift */; };
 		0C4BBBBE26B1F77300B6FD4B /* MessagePreviewApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BBBBD26B1F77300B6FD4B /* MessagePreviewApi.swift */; };
+		0C4BBBC026B25ADB00B6FD4B /* ChatViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BBBBF26B25ADA00B6FD4B /* ChatViewVM.swift */; };
 		0C4ED21A2682353100DB60BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C4ED2192682353100DB60BB /* GoogleService-Info.plist */; };
 		0C4F34702688903A00BCDA64 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346E2688903A00BCDA64 /* UserApi.swift */; };
 		0C4F34712688903A00BCDA64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F346F2688903A00BCDA64 /* Api.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		0C09BE4026A24E14000A2B29 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0C4BBBBD26B1F77300B6FD4B /* MessagePreviewApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePreviewApi.swift; sourceTree = "<group>"; };
+		0C4BBBBF26B25ADA00B6FD4B /* ChatViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewVM.swift; sourceTree = "<group>"; };
 		0C4ED2192682353100DB60BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C4F346E2688903A00BCDA64 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		0C4F346F2688903A00BCDA64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0CB2FE5026B10BD30047E814 /* MessageRowView.swift */,
 				0CB2FE4426B0C0970047E814 /* MessageView.swift */,
 				0CB2FE4626B0CB920047E814 /* ChatView.swift */,
+				0C4BBBBF26B25ADA00B6FD4B /* ChatViewVM.swift */,
 				0CB2FE4C26B0D4150047E814 /* ChatViewHeader.swift */,
 			);
 			path = MessagesViews;
@@ -525,6 +528,7 @@
 				0CBD4A0A26A4C75500E743C1 /* ImagePicker.swift in Sources */,
 				0CBD4A2826A98CDF00E743C1 /* Person.swift in Sources */,
 				0C4BBBBE26B1F77300B6FD4B /* MessagePreviewApi.swift in Sources */,
+				0C4BBBC026B25ADB00B6FD4B /* ChatViewVM.swift in Sources */,
 				0CB2FE4526B0C0970047E814 /* MessageView.swift in Sources */,
 				0CBD4A0C26A4D35D00E743C1 /* FullWidthTextButton.swift in Sources */,
 				0CBD4A1426A4F3AE00E743C1 /* StorageService.swift in Sources */,

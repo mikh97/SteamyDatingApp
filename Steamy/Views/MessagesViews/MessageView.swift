@@ -20,16 +20,17 @@ struct MessageView: View {
             }
             
             Text(message.text)
-                .padding(15)
+                .padding(12)
                 .foregroundColor(message.fromCurrentUser ? .white : (colorScheme == .dark ? .white : .black))
-                .background(message.fromCurrentUser ? Color.red : (colorScheme == .dark ? Color.gray : Color.gray.opacity(0.25)))
-                .cornerRadius(25)
+                .background(message.fromCurrentUser ? Color.red : Color(.systemGray6))
+                .cornerRadius(30)
             
             if !message.fromCurrentUser {
                 Spacer()
             }
         }
-        .padding()
+        .padding(.horizontal)
+        .padding(.vertical, 10)
     }
 }
 

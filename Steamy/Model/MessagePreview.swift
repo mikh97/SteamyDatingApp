@@ -43,9 +43,21 @@ class MessagePreview {
 }
 
 
+//extension MessagePreview: Equatable {
+//    static func == (lhs: MessagePreview, rhs: MessagePreview) -> Bool {
+//        lhs.date == rhs.date && lhs.user.uid == rhs.user.uid && lhs.channel == rhs.channel
+//    }
+//}
+
+extension MessagePreview: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
+}
+
 extension MessagePreview: Equatable {
-    static func == (lhs: MessagePreview, rhs: MessagePreview) -> Bool {
-        lhs.date == rhs.date && lhs.user.uid == rhs.user.uid && lhs.channel == rhs.channel
+    public static func ==(lhs: MessagePreview, rhs: MessagePreview) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
 }
 

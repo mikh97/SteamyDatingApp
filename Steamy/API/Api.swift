@@ -9,4 +9,5 @@ import Foundation
 class Api {
     static var User = UserApi()
     static var MessagePreview = MessagePreviewApi()
+    static var Message = MessageApi()
 }

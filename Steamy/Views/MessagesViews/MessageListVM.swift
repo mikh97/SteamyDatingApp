@@ -8,19 +8,20 @@
 import Foundation
 
 class MessageListVM: ObservableObject {
-    @Published var messagePreviews: [MessagePreview] = []
-    
-    
-    init() {
-        loadPreviews()
+    var messagePreviews = [MessagePreview]() {
+        willSet {
+            if visible {
+                objectWillChange.send()
+            }
+        }
     }
     
+    var visible = false
+    
     func loadPreviews() {
-        Api.MessagePreview.lastMessages(uid: Api.User.currentUserId) { (preview) in
-            if !self.messagePreviews.contains(where: { $0.user.uid == preview.user.uid }) {
-                self.messagePreviews.append(preview)
-                self.sortedPreviews()
-            }
+        Api.MessagePreview.lastMessages(uid: Api.User.currentUserId) { (previews) in
+            self.messagePreviews = previews
+            self.sortedPreviews()
         }
     }
     

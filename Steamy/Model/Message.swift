@@ -59,6 +59,12 @@ class Message {
     }
 }
 
+extension Message: Equatable {
+    static func == (lhs: Message, rhs: Message) -> Bool {
+        lhs.date == rhs.date && lhs.from == rhs.from 
+    }
+
+}
 
 
 extension Message {
