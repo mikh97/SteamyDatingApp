@@ -15,11 +15,15 @@ struct NewMatchView: View {
     
     @State var profileImageUrl = ""
     @State var matchedFirstName = ""
+    @State var matchedLastName = ""
+    @State var matchedEmail = ""
+    @State var matchedStatus = ""
     @State var matchedProfileImageUrl = ""
     
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
+        NavigationView {
         VStack {
             Spacer()
             
@@ -45,21 +49,23 @@ struct NewMatchView: View {
             Spacer().frame(height: 50)
             
             
-            Button(action: {
-                self.showNewMatchView = false
-                // navigate to chat view
-                
-            }, label: {
-                Text("Send a Message")
-                    .font(Font.system(size: 15, weight: .semibold))
-                    .foregroundColor(Color.white)
-                    .frame(maxWidth: .infinity)
-                    .padding([.top, .bottom], 10)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(6)
-                    .padding([.top, .bottom], 10)
-                    .padding()
-            })
+            NavigationLink(destination: ChatView(user: User(uid: matchedPersonID, firstName: matchedFirstName, lastName: matchedLastName, email: matchedEmail, profileImageUrl: matchedProfileImageUrl, status: matchedStatus))) {
+//                Button(action: {
+//                    self.showNewMatchView = false
+                    // navigate to chat view
+                    
+//                }, label: {
+                    Text("Send a Message")
+                        .font(Font.system(size: 15, weight: .semibold))
+                        .foregroundColor(Color.white)
+                        .frame(maxWidth: .infinity)
+                        .padding([.top, .bottom], 10)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(6)
+                        .padding([.top, .bottom], 10)
+                        .padding()
+//                })
+            }
             
             FullWidthTextButton(action: {
                 self.showNewMatchView = false
@@ -71,12 +77,16 @@ struct NewMatchView: View {
             Api.User.getUserInfoSingleEvent(uid: matchedPersonID) { user in
                 matchedFirstName = user.firstName
                 matchedProfileImageUrl = user.profileImageUrl
+                matchedLastName = matchedLastName
+                matchedEmail = user.email
+                matchedStatus = user.status
             }
 
             Api.User.getUserInfoSingleEvent(uid: Api.User.currentUserId) { user in
                 profileImageUrl = user.profileImageUrl
             }
         }
+    }
     }
 }
 
