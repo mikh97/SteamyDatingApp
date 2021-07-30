@@ -6,6 +6,27 @@ This is an IOS mobile application which uses Firebase dependencies. Since we are
 
 ## How to Use Steamy
 
+![Options](/ScreenShots/SignUp.png)
+
+This is the sign up section where you will be prompted to fill in the details about yourself.
+
+![Options](/ScreenShots/Login.png)
+
+This is the log in section where you can enter your credentials and password to log in to your existing account.
+
+![Options](/ScreenShots/Profile.png)
+
+This is the profile section, you can sign out, upload images of yourself, or edit the details about yourself.
+
+![Options](/ScreenShots/Discovery.png)
+
+This is the discovery section where you can see all of the potential matches in your area. 
+
+![Options](/ScreenShots/Discovery.png)
+
+This should be the screenshot of the messages
+This si the messaging section where you can contact all of your matches. Send them a greetings!
+
 
 ### Download
 
