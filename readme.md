@@ -15,37 +15,22 @@ This is an IOS mobile application which uses Firebase dependencies. Since we are
 		width="210"
 		alt="SignUp"
 		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/SignUp.png">
-
-This is the sign up section where you will be prompted to fill in the details about yourself.
-
 <img
 		width="210"
 		alt="Login"
 		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Login.png">
-
-This is the log in section where you can enter your credentials and password to log in to your existing account.
-
 <img
 		width="210"
 		alt="Profile"
 		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Profile.png">
-
-This is the profile section, you can sign out, upload images of yourself, or edit the details about yourself.
-
 <img
 		width="210"
 		alt="Discovery"
 		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Discovery.png">
-
-This is the discovery section where you can see all of the potential matches in your area. 
-
 <img
 		width="210"
 		alt="Messaging"
 		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Discovery.png">
-
-This should be the screenshot of the messages
-This is the messaging section where you can contact all of your matches. Send them a greetings!
 
 
 ## Download
