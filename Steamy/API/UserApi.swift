@@ -19,9 +19,11 @@ class UserApi: ObservableObject, UserServiceProtocol {
     @Published var signedIn = false
     @Published var cardPeople: [Person] = []
     @Published var currentMatchedPersonID = ""
+    @Published var isNewUser = false
     
     init() {
-        if currentUserId != "" {
+        isNewUser = Auth.auth().currentUser?.photoURL == nil
+        if currentUserId != "" && !isNewUser {
             loadCardPeople()
         }
     }
@@ -31,8 +33,12 @@ class UserApi: ObservableObject, UserServiceProtocol {
     }
     
     var currentUserId: String {
-        return Auth.auth().currentUser != nil ? Auth.auth().currentUser!.uid : ""
+        return Auth.auth().currentUser != nil ? Auth.auth().currentUser!.uid : "nil"
     }
+    
+//    var isNewUser: Bool {
+//        return isSignedIn ? (Auth.auth().currentUser?.photoURL) == nil : false
+//    }
     
     func signUp(email: String, password: String, firstName: String, lastName: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
@@ -55,6 +61,8 @@ class UserApi: ObservableObject, UserServiceProtocol {
                     if error == nil {
                         DispatchQueue.main.async {
                             self?.signedIn = true
+                            self?.isNewUser = true
+                            self?.cardPeople = []
                         }
                         onSuccess()
                     } else {
@@ -75,8 +83,9 @@ class UserApi: ObservableObject, UserServiceProtocol {
             
             DispatchQueue.main.async {
                 self?.signedIn = true
+                self?.isNewUser = (Auth.auth().currentUser?.photoURL) == nil
             }
-            
+            print(self?.isNewUser.description)
             print(authData?.user.email)
             
             onSuccess()
