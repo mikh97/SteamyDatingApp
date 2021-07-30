@@ -16,6 +16,12 @@ class MessageListVM: ObservableObject {
         }
     }
     
+    @Published var isNewMatchEmpty = false
+    
+    init() {
+        getNewMatch()
+    }
+    
     var visible = false
     
     func loadPreviews() {
@@ -29,4 +35,13 @@ class MessageListVM: ObservableObject {
         messagePreviews = messagePreviews.sorted(by: { $0.date > $1.date })
     }
     
+    private func getNewMatch() {
+        Ref().databaseRoot.child("newMatch").observe(.value) { snapshot in
+            if snapshot.hasChild(Api.User.currentUserId) {
+                self.isNewMatchEmpty = false
+            } else {
+                self.isNewMatchEmpty = true
+            }
+        }
+    }
 }
