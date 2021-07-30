@@ -181,12 +181,13 @@ struct ProfileView: View {
                         
                         
                         Spacer()
-                        
-                        FullWidthTextButton(action: {
-                            user.signOut { errorMessage in
-                                ProgressHUD.showError(errorMessage)
-                            }
-                        }, text: "Sign Out")
+                        NavigationLink(destination: AuthSelectionView()) {
+                            FullWidthTextButton(action: {
+                                user.signOut { errorMessage in
+                                    ProgressHUD.showError(errorMessage)
+                                }
+                            }, text: "Sign Out")
+                        }
                         
                     }
                     
