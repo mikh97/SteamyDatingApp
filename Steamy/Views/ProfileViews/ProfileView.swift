@@ -146,7 +146,7 @@ struct ProfileView: View {
                                         
                                 } else {
                                     ForEach(galleryDict.sorted(by: >), id: \.key) { key, url in
-                                        NavigationLink(destination: GalleryPhotoView(url: url)) {
+                                        NavigationLink(destination: GalleryPhotoView(url: url, showDeleteButton: true)) {
                                             KFImage(URL(string: url))
                                                 .placeholder({
                                                     ProgressView()
@@ -309,6 +309,7 @@ class TextFieldManager: ObservableObject {
 struct GalleryPhotoView: View {
     
     var url: String
+    var showDeleteButton: Bool = false
     
     @State var showActionSheet = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -321,7 +322,7 @@ struct GalleryPhotoView: View {
         KFImage(URL(string: url))
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(trailing: showDeleteButton ? Button(action: {
                 
             }, label: {
                 Button(action: {
@@ -344,6 +345,6 @@ struct GalleryPhotoView: View {
                             )
                         }
                 }
-            }))
+            }) : nil)
     }
 }
