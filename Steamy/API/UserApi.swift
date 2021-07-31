@@ -93,6 +93,16 @@ class UserApi: ObservableObject, UserServiceProtocol {
                 
     }
     
+    func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error == nil {
+                onSuccess()
+            } else {
+                onError(error!.localizedDescription)
+            }
+        }
+    }
+    
     func signOut(onError: @escaping(_ errorMessage: String) -> Void) {
         try? Auth.auth().signOut()
         self.signedIn = false
