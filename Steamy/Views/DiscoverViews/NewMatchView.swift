@@ -77,7 +77,7 @@ struct NewMatchView: View {
             Api.User.getUserInfoSingleEvent(uid: matchedPersonID) { user in
                 matchedFirstName = user.firstName
                 matchedProfileImageUrl = user.profileImageUrl
-                matchedLastName = matchedLastName
+                matchedLastName = user.lastName
                 matchedEmail = user.email
                 matchedStatus = user.status
             }
