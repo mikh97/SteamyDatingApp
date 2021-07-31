@@ -124,7 +124,19 @@ struct ProfileView: View {
                                     self.isShowPhotoLibraryGallery = true
                                 }) {
                                     RoundedRectangle(cornerRadius: 15/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center).foregroundColor(Color(UIColor.systemGray5))
-                                        .overlay(Image(systemName: "plus.circle.fill").resizable().frame(width: 50, height: 50, alignment: .center).foregroundColor(Color(UIColor.systemGray2)))
+                                        .overlay(
+                                            VStack {
+                                                Image(systemName: "plus.circle.fill")
+                                                    .resizable()
+                                                    .frame(width: 50, height: 50, alignment: .center)
+                                                    .foregroundColor(Color(UIColor.systemGray2))
+                                                Text("Add Photo")
+                                                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                                                    .fontWeight(.semibold)
+                                                    .padding(.top, 1)
+                                                
+                                            }
+                                        )
                                 }
                                 .sheet(isPresented: $isShowPhotoLibraryGallery) {
                                     ImagePicker(sourceType: .photoLibrary, imageType: "gallery",  selectedImage: self.$profileImage)
