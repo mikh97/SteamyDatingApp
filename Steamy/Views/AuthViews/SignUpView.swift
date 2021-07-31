@@ -22,6 +22,8 @@ struct SignUpView: View {
     
     @EnvironmentObject var user: UserApi
     
+    @Environment(\.colorScheme) var colorScheme
+    
     func signUp(onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         guard !first_name.isEmpty,
               !last_name.isEmpty,
@@ -70,149 +72,118 @@ struct SignUpView: View {
     
     
     var body: some View {
-               
+        
         ZStack {
-            Color(red: 0.94, green: 0.30, blue: 0.22)
-             .ignoresSafeArea()
-
-            VStack{
-                
-            HStack {
-                
-                
-                Text("Sign Up")
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                    .font(.system(size: 50, weight: .semibold, design: .rounded ))
-            
-                
-            }
-                
-           
-                VStack(alignment: .leading){
-                    
-                    Spacer(minLength: 30).frame(width: 100, height:50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                    Text("Lets Get Started!")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 25, weight: .bold, design: .rounded ))
-                        
-                    Text("Create an account to use steamy")
-                        .foregroundColor(.yellow)
-                        .font(.system(size: 15, weight: .bold, design: .rounded ))
+            Color(colorScheme == .dark ? .black : .white)
+                .ignoresSafeArea()
+                .onTapGesture {
+                    self.endEditing(true)
                 }
+            
+            VStack {
+                Text("Sign Up")
+                    .foregroundColor(Color.red)
+                    .font(.system(size: 50, weight: .bold))
+                
+                Spacer().frame(height:50)
+                
+                Text("Let's Get Started!")
+                    .foregroundColor(Color.orange)
+                    .font(.system(size: 25, weight: .semibold))
+                    .padding(.bottom)
+                
+                Text("Create an account to use steamy.")
+                    .foregroundColor(.yellow)
+                    .font(.system(size: 25, weight: .light))
                 
                 VStack{
                     
-                    Spacer(minLength: 50).frame(width: 65, height:50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:50)
                     
                     TextField("First Name", text: $first_name)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(5)
-                        .frame(width: 250, height: 0, alignment: .center)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
                     
-                    Spacer(minLength: 50).frame(width: 65, height:5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:10)
                     
                     TextField("Last Name", text: $last_name)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(5)
-                        .frame(width: 250, height: 75, alignment: .center)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
                     
-                    Spacer(minLength: 50).frame(width: 65, height:0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:10)
                     
                     TextField("Email", text: $email)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(5)
-                        .frame(width: 250, height: 15, alignment: .center)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
                     
-                    Spacer(minLength: 50).frame(width: 65, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:10)
                     
                     SecureField("Password", text: $password)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(5)
-                        .frame(width: 250, height: 55, alignment: .center)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
                     
-                    Spacer(minLength: 50).frame(width: 65, height:0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:10)
                     
                     SecureField("Confirm Password", text: $confirm_password)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(5)
-                        .frame(width: 250, height: 35, alignment: .center)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
                     
                 }
                 
                 VStack{
-                    Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:50)
                     
                     Button(action: {
-                            print("Create Pressed")
+                        print("Create Pressed")
                         signUp {
                         } onError: { errorMessage in
                             ProgressHUD.showError(errorMessage)
                         }
-
-                    }) {
-                        Text("Create")
-                            .frame(width: 250, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .font(.system(size: 20, weight: .semibold, design: .rounded))
-                            .padding()
-                            .background(Color.yellow)
-                            .foregroundColor(.white)
-                            .border(Color.yellow, width:5)
-                            .cornerRadius(40)
-                            
-                    }
-                    
-                    Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                    Button(action: {
-                            print("Sign Up Pressed")
-                    }) {
                         
-                        Label("Sign up with facebook", image: "facebooklogo")
-                            .frame(width: 250, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .font(.system(size: 20, weight: .semibold, design: .rounded))
+                    }) {
+                        Text("Begin Journey")
+                            .font(Font.system(size: 15, weight: .semibold))
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity)
+                            .padding([.top, .bottom], 10)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(6)
+                            .padding([.top, .bottom], 10)
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .border(Color.blue, width:5)
-                            .cornerRadius(40)
+                        
                     }
                     
-                    Spacer(minLength: 50).frame(width: 200, height:30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-//                    Button(action: {
-//                        print("Login check Pressed")
-//                    }) {
-//                        Text("Already have an account? Log in here.")
-//                            .foregroundColor(.white)
-//
-//                    }
+                    Spacer()
                     
                     NavigationLink(destination: LoginView()){
                         Text("Already have an account? Log in here.")
-                            .foregroundColor(.white)
+                            .foregroundColor(Color.red)
                     }
                     
-                    
-                    Spacer(minLength: 50).frame(width: 200, height:20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer().frame(height:20)
                 }
                 
             }
             
         }
+        .padding(.top, 1)
         .navigationBarBackButtonHidden(true)
-        .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
     }
 }
 
