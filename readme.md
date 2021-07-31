@@ -35,7 +35,7 @@ This is an IOS mobile application which uses Firebase dependencies. Since we are
 
 ## Download
 
-You can [download](https://github.com/mikh97/SteamyDatingApp/archive/refs/heads/main.zip) the latest installable version of Steamy for mobile IOS only. 
+You can [download](https://github.com/mikh97/SteamyDatingApp/archive/refs/heads/main.zip) the latest runnable version of Steamy here. 
 
 ## Contributors
 
