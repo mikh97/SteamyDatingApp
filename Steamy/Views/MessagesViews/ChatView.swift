@@ -73,7 +73,7 @@ struct ChatView: View {
                 .padding(.bottom)
             }
             
-            ChatViewHeader(name: user.firstName, imageURL: URL(string: user.profileImageUrl))
+            ChatViewHeader(user: user)
             
         }
         .modifier(HideNavigationView())

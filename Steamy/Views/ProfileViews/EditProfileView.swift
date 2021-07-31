@@ -15,13 +15,17 @@ struct EditProfileView: View {
     @State var lastName: String = ""
     @State var age = ""
     @State var selectedGender: String = ""
-//    @State var location: String=""
+    //    @State var location: String=""
     @State var info_saved = false
-//    @State var selectedLocation = ""
+    //    @State var selectedLocation = ""
     
     @Binding var showSheetView: Bool
     
     @State var gender = ["Male", "Female"]
+    
+    @State var editingFlag = false
+    
+    @Environment(\.colorScheme) var colorScheme
     
     func updateUserProfile() {
         let dict: Dictionary<String, Any> = [
@@ -43,68 +47,114 @@ struct EditProfileView: View {
     var body: some View {
         
         NavigationView {
-            
-            Form {
+            ZStack{
                 
-                Section(header: Text("First Name")) {
-                    TextField("First Name", text: $firstName)
+                if colorScheme == .dark {
+                    Color.black.onTapGesture {
+                        self.endEditing(true)
+                    }
+                } else {
+                    Color.white.onTapGesture {
+                        self.endEditing(true)
+                    }
                 }
                 
-                Section(header: Text("Last Name")) {
-                    TextField("Last Name", text: $lastName)
-                }
-                
-                Section(header: Text("Age")) {
-                    TextField("Age", text: $age)
-                        .keyboardType(.numberPad)
-                        .onReceive(Just(age)) { newValue in
-                            let filtered = newValue.filter { "0123456789".contains($0) }
-                            if filtered != newValue {
-                                self.age = filtered
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("First Name")
+                            .frame(width: 100, alignment: .leading)
+                        TextField("First Name", text: $firstName, onEditingChanged: { editing in
+                                    self.editingFlag = editing})
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 5)
+                    }
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color(UIColor.systemGray6))
+                    
+                    HStack {
+                        Text("Last Name")
+                            .frame(width: 100, alignment: .leading)
+                        TextField("Last Name", text: $lastName, onEditingChanged: { editing in
+                                    self.editingFlag = editing})
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 5)
+                    }
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color(UIColor.systemGray6))
+                    
+                    
+                    HStack {
+                        Text("Age")
+                            .frame(width: 100, alignment: .leading)
+                        TextField("Age", text: $age, onEditingChanged: { editing in
+                                    self.editingFlag = editing})
+                            .keyboardType(.numberPad)
+                            .onReceive(Just(age)) { newValue in
+                                let filtered = newValue.filter { "0123456789".contains($0) }
+                                if filtered != newValue {
+                                    self.age = filtered
+                                }
+                            }
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 5)
+                    }
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color(UIColor.systemGray6))
+                    
+                    HStack {
+                        Text("Gender")
+                            .frame(width: 100, alignment: .leading)
+                        
+                        Picker("Gender", selection: $selectedGender) {
+                            ForEach(gender, id: \.self) {
+                                Text($0)
                             }
                         }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 5)
+                        .gesture(TapGesture().onEnded({
+                            UIApplication.shared.windows.first{$0.isKeyWindow }?.endEditing(true)
+                        }), including: (editingFlag) ? .all : .none)
+                    }
+                    
+                    Spacer()
                     
                 }
-                
-                Section(header: Text("Gender")) {
-                    Picker("Gender", selection: $selectedGender) {
-                        ForEach(gender, id: \.self) {
-                            Text($0)
-                        }
+                .padding(.top, 10)
+                .padding(.horizontal)
+                .navigationBarTitle("Edit Profile", displayMode: .inline)
+                .navigationBarItems(leading: Button(action: {
+                    print("dismiss sheet view - cancel")
+                    self.showSheetView = false
+                    
+                }, label: {
+                    Text("Cancel")
+                    
+                }), trailing: Button(action: {
+                    // save data to firebase
+                    ProgressHUD.show()
+                    updateUserProfile()
+                    print("dismiss sheet view - done")
+                    
+                }) {
+                    Text("Done").bold()
+                })
+                .onAppear {
+                    Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
+                        firstName = user.firstName
+                        lastName = user.lastName
+                        age = user.age ?? ""
+                        selectedGender = user.gender ?? ""
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
-                
-            }
-            .padding(.top, 10)
-            
-            .navigationBarTitle("Edit Profile", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: {
-                print("dismiss sheet view - cancel")
-                self.showSheetView = false
-                
-            }, label: {
-                Text("Cancel")
-                
-            }), trailing: Button(action: {
-                // save data to firebase
-                ProgressHUD.show()
-                updateUserProfile()
-                print("dismiss sheet view - done")
-                
-            }) {
-                Text("Done").bold()
-            })
-            .onAppear {
-                Api.User.getUserDetails(uid: Api.User.currentUserId) { (user) in
-                    firstName = user.firstName
-                    lastName = user.lastName
-                    age = user.age ?? ""
-                    selectedGender = user.gender ?? ""
                 }
             }
-            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
-            
         }
         
     }

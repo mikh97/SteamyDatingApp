@@ -12,8 +12,9 @@ struct ChatViewHeader: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
     
-    let name: String
-    let imageURL: URL?
+    @State var showSheetView = false
+    
+    let user: User
     
     var body: some View {
         ZStack {
@@ -35,20 +36,28 @@ struct ChatViewHeader: View {
                 Spacer()
                 
                 VStack(spacing: 6) {
-                    RoundedImage(url: imageURL)
+                    RoundedImage(url: URL(string: user.profileImageUrl))
                         .frame(height: 50)
                     
-                    Text(name)
+                    Text(user.firstName)
                         .font(.system(size: 14))
                 }
                 .padding(.top, 10)
                 
                 Spacer()
                 
-                Button(action: { }) {
+                Button(action: {
+                    self.showSheetView.toggle()
+                }) {
                     Image(systemName: "person.fill")
                         .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(Color.red)
                 }
+                .fullScreenCover(isPresented: $showSheetView) {
+                    UserProfileView(showSheetView: self.$showSheetView, user: user)
+                    
+                }
+                
             }
             .padding(.horizontal, 22)
             .padding(.vertical, 10)
@@ -62,7 +71,7 @@ struct ChatViewHeader: View {
 struct ChatViewHeader_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            ChatViewHeader(name: Person.example.firstName, imageURL: URL(string: Person.example.profileImageUrl))
+            ChatViewHeader(user: User.example)
             Spacer()
         }
     }

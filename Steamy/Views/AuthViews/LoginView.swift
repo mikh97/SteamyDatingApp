@@ -40,68 +40,76 @@ struct LoginView: View {
     
     @State var email: String = ""
     @State var password: String = ""
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-            ZStack {
+        ZStack {
+            
+            Color(colorScheme == .dark ? .black : .white)
+                .ignoresSafeArea()
+                .onTapGesture {
+                    self.endEditing(true)
+                }
+            
+            VStack {
                 
-                Color(red: 0.94, green: 0.30, blue: 0.22)
-                    .ignoresSafeArea()
+                Text("Login")
+                    .foregroundColor(Color.red)
+                    .font(.system(size: 50, weight: .bold))
+                
+                
+                Spacer(minLength: 30).frame(width: 10, height:0, alignment: .center)
+                
+                VStack(alignment: .center){
+                    
+                    Spacer(minLength: 30).frame(width: 100, height:60, alignment: .center)
+                    
+                    Text("Welcome Back!")
+                        .foregroundColor(Color.orange)
+                        .font(.system(size: 25, weight: .semibold))
+                        .padding(.bottom)
+                    
+                    
+                    Text("Sign in to continue.")
+                        .foregroundColor(.yellow)
+                        .font(.system(size: 25, weight: .light))
+                    
+                    Spacer(minLength: 50).frame(width: 20, height:60, alignment: .center)
+                }
                 
                 VStack{
                     
-                    HStack{
-                        Text("Login")
-                            .foregroundColor(.white)
-                            .font(.system(size: 50, weight: .semibold, design: .rounded ))
-                        
+                    Spacer().frame(height:50)
+                    
+                    TextField("Email", text: $email)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
+                    
+                    Spacer().frame(height:10)
+                    
+                    SecureField("Password", text: $password)
+                        .padding(7)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(6)
+                        .frame(width: 300)
+                    
+                    Spacer().frame(height:10)
+                    
+                    NavigationLink(destination: ForgotPasswordView()){
+                        Text("Trouble logging in to your account?")
+                            .foregroundColor(Color.orange)
+                            .font(.system(size: 16, weight: .light))
                     }
+                    .padding()
                     
-                    Spacer(minLength: 30).frame(width: 10, height:0, alignment: .center)
+                    Spacer().frame(height:50)
                     
-                    VStack(alignment: .center){
-                        
-                        Spacer(minLength: 30).frame(width: 100, height:60, alignment: .center)
-                        
-                        Text("Welcome Back!")
-                            .foregroundColor(.white)
-                            .font(.system(size: 30, weight: .bold, design: .rounded ))
-                        
-                        
-                        Text("Sign in to continue")
-                            .foregroundColor(.yellow)
-                            .font(.system(size: 25, weight: .bold, design: .rounded ))
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        
-                        Spacer(minLength: 50).frame(width: 20, height:60, alignment: .center)
-                    }
-                    
-                    VStack{
-                        
-                        Spacer(minLength: 50).frame(width: 65, height:50, alignment: .center)
-                        
-                        TextField("Email", text: $email)
-                            .disableAutocorrection(true)
-                            .autocapitalization(.none)
-                            .background(Color.white)
-                            .cornerRadius(5)
-                            .frame(width: 250, height: 0, alignment: .center)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        Spacer(minLength: 50).frame(width: 65, height:5, alignment: .center)
-                        
-                        SecureField("Password", text: $password)
-                            .background(Color.white)
-                            .cornerRadius(5)
-                            .frame(width: 250, height: 75, alignment: .center)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        NavigationLink(destination: ForgotPasswordView()){
-                            Text("Forgot Password?")
-                                .foregroundColor(.white)
-                        }
-                        
-                        Spacer(minLength: 50).frame(width: 20, height:100, alignment: .center)
-                        
-                        
+                    VStack {
                         Button(action: {
                             print("Login pressed")
                             
@@ -113,49 +121,34 @@ struct LoginView: View {
                             
                         }) {
                             
-                            Text("Login")
-                                .frame(width: 250, height: 0, alignment: .center)
-                                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                            Text("Log In")
+                                .font(Font.system(size: 15, weight: .semibold))
+                                .foregroundColor(Color.white)
+                                .frame(maxWidth: .infinity)
+                                .padding([.top, .bottom], 10)
+                                .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+                                .cornerRadius(6)
+                                .padding([.top, .bottom], 10)
                                 .padding()
-                                .background(Color.yellow)
-                                .foregroundColor(.white)
-                                .border(Color.yellow, width:5)
-                                .cornerRadius(40)
                             
                         }
                         
-                        
-//                        if (authentication == true){
-//                            NavigationLink(destination: ProfileView(),isActive:$authentication, label: {Text("Login Sucessfull. Continue")
-//                                .frame(width: 250, height: 0, alignment: .center)
-//                                .font(.system(size: 20, weight: .semibold, design: .rounded))
-//                                .padding()
-//                                .background(Color.yellow)
-//                                .foregroundColor(.white)
-//                                .border(Color.yellow, width:5)
-//                                .cornerRadius(40)
-//                            })
-//                        }
-//
-//
-//
-//
-//                        //Back to signup Page
-//
                         Spacer()
                         
                         NavigationLink(destination: SignUpView()){
-                            Text("Do not have an account? Sign up.")
-                                .foregroundColor(.white)
+                            Text("Don't have an account? Sign up here.")
+                                .foregroundColor(Color.red)
                         }
-                        Spacer(minLength: 50).frame(width: 20, height:100, alignment: .center)
+                        
+                        Spacer().frame(height:20)
                     }
-                    
                 }
+                
             }
-            .navigationBarBackButtonHidden(true)
-            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
         }
+        .padding(.top, 1)
+        .navigationBarBackButtonHidden(true)
+    }
     
     
     struct LoginView_Previews: PreviewProvider {

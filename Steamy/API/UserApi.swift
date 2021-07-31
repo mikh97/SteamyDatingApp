@@ -19,9 +19,11 @@ class UserApi: ObservableObject, UserServiceProtocol {
     @Published var signedIn = false
     @Published var cardPeople: [Person] = []
     @Published var currentMatchedPersonID = ""
+    @Published var isNewUser = false
     
     init() {
-        if currentUserId != "" {
+        isNewUser = Auth.auth().currentUser?.photoURL == nil
+        if currentUserId != "" && !isNewUser {
             loadCardPeople()
         }
     }
@@ -31,8 +33,12 @@ class UserApi: ObservableObject, UserServiceProtocol {
     }
     
     var currentUserId: String {
-        return Auth.auth().currentUser != nil ? Auth.auth().currentUser!.uid : ""
+        return Auth.auth().currentUser != nil ? Auth.auth().currentUser!.uid : "nil"
     }
+    
+//    var isNewUser: Bool {
+//        return isSignedIn ? (Auth.auth().currentUser?.photoURL) == nil : false
+//    }
     
     func signUp(email: String, password: String, firstName: String, lastName: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
@@ -55,6 +61,8 @@ class UserApi: ObservableObject, UserServiceProtocol {
                     if error == nil {
                         DispatchQueue.main.async {
                             self?.signedIn = true
+                            self?.isNewUser = true
+                            self?.cardPeople = []
                         }
                         onSuccess()
                     } else {
@@ -75,13 +83,24 @@ class UserApi: ObservableObject, UserServiceProtocol {
             
             DispatchQueue.main.async {
                 self?.signedIn = true
+                self?.isNewUser = (Auth.auth().currentUser?.photoURL) == nil
             }
-            
+            print(self?.isNewUser.description)
             print(authData?.user.email)
             
             onSuccess()
         }
                 
+    }
+    
+    func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error == nil {
+                onSuccess()
+            } else {
+                onError(error!.localizedDescription)
+            }
+        }
     }
     
     func signOut(onError: @escaping(_ errorMessage: String) -> Void) {
@@ -187,6 +206,20 @@ class UserApi: ObservableObject, UserServiceProtocol {
                             Ref().databaseRoot.child("newMatch").child(Api.User.currentUserId).updateChildValues([person.uid: true])
                             
                             Ref().databaseRoot.child("newMatch").child(person.uid).updateChildValues([Api.User.currentUserId: true])
+                            
+                            let channelId = Message.hash(forMembers: [Api.User.currentUserId, person.uid])
+                            let date: Double = Date().timeIntervalSince1970
+                            let tempDict = [
+                                "from" : Api.User.currentUserId,
+                                "to": person.uid,
+                                "date": date,
+                                "read": true,
+                                "text": "New Match"
+                            ] as [String : Any]
+                            let refFromMessagePreview = Database.database().reference().child(REF_MESSAGE_PREVIEW).child(Api.User.currentUserId).child(channelId)
+                            refFromMessagePreview.updateChildValues(tempDict)
+                            let refToMessagePreview = Database.database().reference().child(REF_MESSAGE_PREVIEW).child(person.uid).child(channelId)
+                            refToMessagePreview.updateChildValues(tempDict)
                             
                             onSuccess(person)
                         }

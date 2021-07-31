@@ -13,45 +13,62 @@ struct ForgotPasswordView: View {
     
     @State var email_sent = false
     @State var email = ""
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ZStack{
-            Color(red: 0.94, green: 0.30, blue: 0.22)
+            Color(colorScheme == .dark ? .black : .white)
                 .ignoresSafeArea()
+                .onTapGesture {
+                    self.endEditing(true)
+                }
             
-            VStack(alignment: .center) {
+            VStack {
+                
+                Text("Forgot your password?")
+                    .foregroundColor(Color.red)
+                    .font(.system(size: 30, weight: .bold))
+                    .multilineTextAlignment(.center)
+                
+                Spacer().frame(height: 20)
+                
+                Text("We've got you covered.")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 18, weight: .light))
+                    .padding(.horizontal, 20)
+                    .padding(.vertical)
                 
                 
-                Text("Reset Password.")
-                    .font(.system(size: 43, weight: .semibold, design: .rounded ))
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.leading)
+                Text("We'll email you a link that will instantly reset your password.")
+                    .foregroundColor(.yellow)
+                    .font(.system(size: 16, weight: .light))
+                    .padding(.horizontal, 20)
+//                    .padding(.vertical)
+                    .multilineTextAlignment(.center)
                 
-                Text("Please enter your email.")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded ))
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.leading)
+                Spacer().frame(height: 20)
                 
                 TextField("Email", text: $email)
-                    .background(Color.white)
-                    .cornerRadius(5)
-                    .frame(width: 250, height: 75, alignment: .center)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .padding(7)
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(6)
+                    .padding()
+                    .keyboardType(.emailAddress)
                 
-                
-                Button(action: {
-                    Auth.auth().sendPasswordReset(withEmail: email) { error in
-                        // ...
-                        email_sent = true
+                FullWidthTextButton(action: {
+                    Api.User.resetPassword(email: email) {
+                        ProgressHUD.showSuccess("If this user exists, we have sent you a password reset email.")
+                    } onError: { errorMessage in
+                        print(errorMessage)
+                        ProgressHUD.showSuccess("If this user exists, we have sent you a password reset email.")
                     }
-                }){
-                    Text("Submit").frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 20, weight: .semibold, design: .rounded))
-                        .padding()
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
-                        .border(Color.yellow, width:5)
-                        .cornerRadius(40)
-                }
+
+                }, text: "Send Email")
+                
+                Spacer()
                 
                 if (email_sent == true){
                     Text("Email Sent if Account exists.")
@@ -59,7 +76,6 @@ struct ForgotPasswordView: View {
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.leading)                }
             }
-            
         }
     }
 }

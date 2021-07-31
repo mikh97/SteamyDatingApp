@@ -8,56 +8,73 @@
 import SwiftUI
 
 struct AuthSelectionView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationView{
             ZStack {
-                Color(red: 0.94, green: 0.30, blue: 0.22)
+                LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
-                
-                VStack(alignment: .center) {
-                    
-                    Text("Find your Perfect Match Today")
-                        .font(.system(size: 43, weight: .semibold, design: .rounded ))
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.leading)
-                    
+                  
                     VStack{
-                        Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
-                        
-                        //send to login Page
-                        
-                        NavigationLink(destination: LoginView()){
-                            Text("LOGIN")
-                                .frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .font(.system(size: 20, weight: .semibold, design: .rounded))
-                                .padding()
-                                .background(Color.yellow)
-                                .foregroundColor(.white)
-                                .border(Color.yellow, width:5)
-                                .cornerRadius(40)
+                        VStack {
+                            Text("Steamy")
+                                .font(.system(size: 30, weight: .light))
+                                .foregroundColor(Color.white)
+                            
+                            Spacer()
+                            
+                            Text("Find your perfect match today.")
+                                .font(.system(size: 50, weight: .bold))
+                                .foregroundColor(Color.white)
+                            
+                            Spacer()
+                            
+                            Text("By tapping Sign Up or Log In, you agree to our Terms and Policies.")
+                                .font(.system(size: 16, weight: .light))
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
                         }
+                        .padding()
                         
-                        
-                        Spacer(minLength: 50).frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height:30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                        //Send to signup page
+                        Spacer()
+
                         
                         NavigationLink(destination: SignUpView()){
                             Text("SIGN UP")
-                                .frame(width: 200, height: 0, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .font(.system(size: 20, weight: .semibold, design: .rounded))
-                                .padding()
+                                .font(Font.system(size: 15, weight: .semibold))
+                                .foregroundColor(Color.red)
+                                .frame(maxWidth: .infinity)
+                                .padding([.top, .bottom], 10)
                                 .background(Color.white)
-                                .foregroundColor(.black)
-                                .border(Color.white, width:5)
-                                .cornerRadius(40)
+                                .cornerRadius(6)
+                                .padding([.top, .bottom], 10)
+                                .padding()
+                        }
+                        
+                        
+                        NavigationLink(destination: LoginView()){
+                            Text("LOG IN")
+                                .font(Font.system(size: 15, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding([.top, .bottom], 10)
+                                .cornerRadius(6)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .stroke(Color.white, lineWidth: 1)
+                                )
+                                .padding([.top, .bottom], 10)
+                                .padding()
                         }
                     }
-                }
+                
                 
             }
-        }.accentColor(.yellow)
+        }.accentColor(Color.red)
     }
 }
 

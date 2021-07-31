@@ -61,8 +61,9 @@ struct MessageListView: View {
                     }
                     
                     Spacer().frame(height: 14)
-                    
+                    if !vm.messagePreviews.isEmpty {
                     ZStack {
+                        
                         VStack {
                             ForEach(vm.messagePreviews.filter({ searchText.isEmpty ? true : displayPreview($0) }), id: \.self) { preview in
                                 NavigationLink(
@@ -82,6 +83,17 @@ struct MessageListView: View {
                             Color(UIColor.systemGray6).opacity(0.5)
                         }
                         
+                    }
+                    } else if vm.isNewMatchEmpty {
+                        Spacer()
+                            Text("Just face the truth. \nIt's empty.")
+                                .font(.system(size: 40, weight: .bold))
+                                .padding()
+                            
+                        
+                    } else {
+                        Spacer()
+                        ProgressView()
                     }
                     
                     Spacer()
