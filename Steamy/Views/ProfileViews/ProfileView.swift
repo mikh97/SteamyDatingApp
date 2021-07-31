@@ -148,6 +148,9 @@ struct ProfileView: View {
                                     ForEach(galleryDict.sorted(by: >), id: \.key) { key, url in
                                         NavigationLink(destination: GalleryPhotoView(url: url)) {
                                             KFImage(URL(string: url))
+                                                .placeholder({
+                                                    ProgressView()
+                                                })
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
                                                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
