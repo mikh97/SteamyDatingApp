@@ -30,7 +30,11 @@ This is an IOS mobile application which uses Firebase dependencies. Since we are
 <img
 		width="210"
 		alt="Messaging"
-		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Discovery.png">
+		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Messaging.png">
+<img
+		width="210"
+		alt="Messaging"
+		src="https://github.com/mikh97/SteamyDatingApp/blob/main/ScreenShots/Messages.png">
 
 
 ## Download
