@@ -22,6 +22,7 @@ struct AuthSelectionView: View {
                         VStack {
                             Text("Steamy")
                                 .font(.system(size: 30, weight: .light))
+                                .foregroundColor(Color.white)
                             
                             Spacer()
                             
@@ -33,6 +34,7 @@ struct AuthSelectionView: View {
                             
                             Text("By tapping Sign Up or Log In, you agree to our Terms and Policies.")
                                 .font(.system(size: 16, weight: .light))
+                                .foregroundColor(Color.white)
                                 .multilineTextAlignment(.center)
                                 .padding(.horizontal)
                         }
