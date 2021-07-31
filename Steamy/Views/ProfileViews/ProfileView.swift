@@ -281,7 +281,9 @@ struct StatusView: View {
                     }
                 
                 )
-                .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                .onTapGesture {
+                    self.endEditing(true)
+                }
                 
             
             Text("\(wordCount)/150")
