@@ -60,9 +60,9 @@ struct UserProfileView: View {
                                         KFImage(URL(string: url))
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
-                                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                            .clipShape(RoundedRectangle(cornerRadius: 15))
                                             .frame(width: 125, height: 175, alignment: .center)
-                                            .cornerRadius(25)
+                                            .cornerRadius(15)
                                     }
                                 }
                             }
