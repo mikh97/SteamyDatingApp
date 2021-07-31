@@ -54,24 +54,24 @@ struct CardImageScroller: View {
                     
                     VStack {
                         HStack {
-                                Text("NOPE")
+                                Text("LIKE")
                                     .font(.system(size: 50))
-                                    .foregroundColor(Color.red)
+                                    .foregroundColor(Color.green)
                                     .padding()
                                     .overlay(RoundedRectangle(cornerRadius: 15)
-                                                .stroke(Color.red, lineWidth: 5)
+                                                .stroke(Color.green, lineWidth: 5)
                                     )
                                     .rotationEffect(.degrees(-25))
                                 .opacity(Double(person.x / screenCutoff) - 1)
                                 
 
                             Spacer()
-                            Text("LIKE")
+                            Text("NOPE")
                                 .font(.system(size: 50))
-                                .foregroundColor(Color.green)
+                                .foregroundColor(Color.red)
                                 .padding()
                                 .overlay(RoundedRectangle(cornerRadius: 15)
-                                            .stroke(Color.green, lineWidth: 5)
+                                            .stroke(Color.red, lineWidth: 5)
                                 )
                                 .rotationEffect(.degrees(25))
                                 .opacity(Double(person.x / screenCutoff * -1) - 1)
