@@ -9,36 +9,94 @@ import XCTest
 @testable import Steamy
 
 class SteamyTests: XCTestCase {
-    
+
     //The unit test setup for login and signup view
-    var loginCredentials: LoginView!
-    var signUpCredentials: SignUpView!
-    
+    var userAPI: UserApi!
+
+    //for setting up a new api test each run
     override func setUp() {
         super.setUp()
-        loginCredentials = LoginView()
-        signUpCredentials = SignUpView()
+        user_api = UserApi()
     }
-    
+
+    //to tear down at the end of a run
     override func tearDown() {
-        loginCredentials = nil
-        signUpCredentials = nil
+        user_api = nil
     }
-    
-    //Create test cases for the login credentials to make sure the method works
-    func test_is_valid_login_credentials() throws {
-//        loginCredentials.email = "kimw2bin@gmail.com"
-//        let isValidEmail = loginCredentials.$email
-//        XCTAssertTrue(isValidEmail, "email is not valid")
-        
+
+    //User API is a class where all of our user's interaction with the database occurs, these functions will be tested
+
+
+    //For sprint 1, unit tests for signInTest, signUpTest, and resetPassword Test
+
+    func testSignUp() {
+        email = "neevalkumar@gmail.com"
+        password = "password123"
+        f_name = "Neeval"
+        l_name = "Kumar"
+
+        XCTAssertNoThrow( user_api.signUp(email: email, password: password, firstName: f_name, lastName: l_name))
     }
-        
-    func testSignUpNameInput(){
-        
+
+    func testSignInTest(){
+        email = "neevalkumar@gmail.com"
+        password = "password123"
+
+        XCTAssertNoThrow(user_api.signIn(email: email, password: password))
     }
-    
-    func testSingUpPasswordInput() {
-        
+
+    // this will make sure the email for the password will throw no errors, however if no acount exists, you still will not get an email
+
+    func testResetPasswordTest() {
+        email = "neevalkumar@gmail.com"
+
+        XCTAssertNoThrow(user_api.resetPassword(email, password))
     }
-    
+
+
+    // for sprint 2, update user profile and
+
+    func testUpdateUserProfile(){
+        let dict: Dictionary<String, Any> = [
+            "firstName": "Neeval",
+            "lastName": "Kumar",
+            "age": "22",
+            "gender": "Male"
+        ]
+
+        XCTAssertNoThrow(user_api.saveUserProfile(dict:dict))
+    }
+
+
+    func testGetGallery(){
+
+        uid = "qweqweqweqweq"
+
+        XCTAssertNoThrow(user_api.getGallery())
+    }
+
+
+
+
+    //sprint 3, test matchmaking, getting users
+
+    func testLoadCardPeople(){
+        XCTAssertNoThrow(user_api.loadCardPeople())
+    }
+
+
+    func testGetUserInfoSingleEvent() {
+        XCTAssertNoThrow(user_api.getUserInfoSingleEvent(uid: "qweqweqweqweq"))
+    }
+
+
+
+    func testSignOut() {
+        XCTAssertNoThrow(user_api.signOut())
+    }
+
+
+
 }
+
+
