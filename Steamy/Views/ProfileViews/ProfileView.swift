@@ -32,6 +32,8 @@ struct ProfileView: View {
     @State var keys = [String]()
     @State var values = [String]()
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
         
@@ -121,8 +123,8 @@ struct ProfileView: View {
                                 Button(action: {
                                     self.isShowPhotoLibraryGallery = true
                                 }) {
-                                    RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center).foregroundColor(Color(red: 203/255, green: 203/255, blue: 203/255))
-                                        .overlay(Image(systemName: "plus.circle.fill").resizable().frame(width: 50, height: 50, alignment: .center).foregroundColor(.gray))
+                                    RoundedRectangle(cornerRadius: 15/*@END_MENU_TOKEN@*/).frame(width: 125, height: 175, alignment: /*@START_MENU_TOKEN@*/.center).foregroundColor(Color(UIColor.systemGray5))
+                                        .overlay(Image(systemName: "plus.circle.fill").resizable().frame(width: 50, height: 50, alignment: .center).foregroundColor(Color(UIColor.systemGray2)))
                                 }
                                 .sheet(isPresented: $isShowPhotoLibraryGallery) {
                                     ImagePicker(sourceType: .photoLibrary, imageType: "gallery",  selectedImage: self.$profileImage)
@@ -135,13 +137,13 @@ struct ProfileView: View {
                                         .foregroundColor(Color(UIColor.white))
                                         .padding([.top, .bottom], 10)
                                         .frame(height: 175)
-                                        .cornerRadius(25)
+                                        .cornerRadius(15)
                                         .overlay(
-                                            RoundedRectangle(cornerRadius: 25)
+                                            RoundedRectangle(cornerRadius: 15)
                                                 .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                                         )
                                         .background(Color.red)
-                                        .cornerRadius(25)
+                                        .cornerRadius(15)
                                         .frame(maxWidth: .infinity)
                                         
                                 } else {
@@ -153,9 +155,9 @@ struct ProfileView: View {
                                                 })
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
-                                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                                .clipShape(RoundedRectangle(cornerRadius: 15.0))
                                                 .frame(width: 125, height: 175, alignment: .center)
-                                                .cornerRadius(25)
+                                                .cornerRadius(15)
                                         }
                                     }
                                 }
@@ -174,12 +176,17 @@ struct ProfileView: View {
                             .multilineTextAlignment(.leading)
                         
                         NavigationLink(destination: StatusView()) {
-                            RoundedRectangle(cornerRadius: 25.0/*@END_MENU_TOKEN@*/).frame(width: 375, height: 125, alignment: /*@START_MENU_TOKEN@*/.center)
-                                .foregroundColor(Color(red: 203/255, green: 203/255, blue: 203/255))
+                            RoundedRectangle(cornerRadius: 10.0/*@END_MENU_TOKEN@*/).frame(width: 375, height: 125, alignment: /*@START_MENU_TOKEN@*/.center)
+                                .foregroundColor(Color(UIColor.systemGray6))
                                 
                                 //the text in the overlay needs to be json parsed from firebase
                                 
-                                .overlay(Text(status).fontWeight(.light).foregroundColor(.black).padding(), alignment: .topLeading)
+                                .overlay(Text(status)
+                                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                                            .fontWeight(.light)
+                                            .padding()
+                                         , alignment: .topLeading
+                                )
                         }
                         
                         
@@ -281,7 +288,9 @@ struct StatusView: View {
                     }
                 
                 )
-                .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                .onTapGesture {
+                    self.endEditing(true)
+                }
                 
             
             Text("\(wordCount)/150")

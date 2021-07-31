@@ -65,17 +65,17 @@ struct CardView: View {
                                         // swipe right
                                         person.x = 500
                                         person.degree = 12
-                                        userApi.swipe(person: person, direction: .nope) { matchedPerson in
-                                            //
+                                        userApi.swipe(person: person, direction: .like) { matchedPerson in
+                                            userApi.currentMatchedPersonID = matchedPerson.uid
+                                            self.showNewMatchView = true
                                         }
 
                                     } else if width < -screenCutoff {
                                         // swipe left
                                         person.x = -500
                                         person.degree = -12
-                                        userApi.swipe(person: person, direction: .like) { matchedPerson in
-                                            userApi.currentMatchedPersonID = matchedPerson.uid
-                                            self.showNewMatchView = true
+                                        userApi.swipe(person: person, direction: .nope) { matchedPerson in
+                                            //
                                         }
                                     }
                                 }
