@@ -74,8 +74,31 @@ class SteamyTests: XCTestCase {
 
         XCTAssertNoThrow(user_api.getGallery())
     }
+    
+    class ContentCollectionTests: XCTestCase {
+        func testQueryingItemByID() {
+            var collection = ContentCollection()
 
+            let item = Item(id: "an-item", title: "A title")
+            collection.add(item)
 
+            let retrievedItem = collection.item(withID: "an-item")
+            XCTAssertEqual(retrievedItem, item)
+        }
+    }
+    
+    class CacheTests: XCTestCase {
+        func testPersistentMessages() {
+            let cache = Cache()
+            let item = Item(id: "an-item", message: "Hey now!")
+
+            // persistence test:
+            XCTAssertNil(cache.expirationDate(for: item))
+
+            cache.insert(item)
+            XCTAssertNotNil(cache.expirationDate(for: item))
+        }
+    }
 
 
     //sprint 3, test matchmaking, getting users
