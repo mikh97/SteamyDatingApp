@@ -40,7 +40,6 @@
 		0CBD4A3226AB624600E743C1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD4A3126AB624600E743C1 /* DiscoverView.swift */; };
 		60054928269BA94300B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46434B557561559E335A4DFB /* Pods_Steamy.framework */; };
 		6005492C269BA94900B7D519 /* Pods_Steamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9F3519E2577FA54F2FF09E /* Pods_Steamy.framework */; };
-		6005497B269BAC8900B7D519 /* SteamyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005497A269BAC8900B7D519 /* SteamyTests.swift */; };
 		6B334D912692CBE400CDA852 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D902692CBE400CDA852 /* ProfileView.swift */; };
 		6B334D972692D67F00CDA852 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D962692D67F00CDA852 /* MessageListView.swift */; };
 		6B334D9D2692E60600CDA852 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B334D9C2692E60600CDA852 /* EditProfileView.swift */; };
@@ -103,7 +102,6 @@
 		4B95917974171FE22AC22E0C /* Pods-Steamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steamy.debug.xcconfig"; path = "Target Support Files/Pods-Steamy/Pods-Steamy.debug.xcconfig"; sourceTree = "<group>"; };
 		4E9F3519E2577FA54F2FF09E /* Pods_Steamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60054978269BAC8900B7D519 /* SteamyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteamyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6005497A269BAC8900B7D519 /* SteamyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamyTests.swift; sourceTree = "<group>"; };
 		6005497C269BAC8900B7D519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B334D902692CBE400CDA852 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6B334D962692D67F00CDA852 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 		60054979269BAC8900B7D519 /* SteamyTests */ = {
 			isa = PBXGroup;
 			children = (
-				6005497A269BAC8900B7D519 /* SteamyTests.swift */,
 				6005497C269BAC8900B7D519 /* Info.plist */,
 			);
 			path = SteamyTests;
@@ -507,7 +504,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6005497B269BAC8900B7D519 /* SteamyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
